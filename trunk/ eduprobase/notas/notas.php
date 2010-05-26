@@ -105,6 +105,12 @@ encabezado('Ingreso de Calificaciones');
 		<br />
 		
 		<table width="96%" align="center">
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td align="center"><strong>Nota 1</strong></td>
+				<td align="center"><strong>Remedial<strong></td>
+			</tr>
 			<?php
 			
 			$anio = date('Y');
@@ -126,7 +132,7 @@ encabezado('Ingreso de Calificaciones');
 			<tr>
 				<td width="139"><?php echo $arreglo['carne']; ?></td>
 				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
-				<td width="168"><?php
+				<td width="168" align="center"><?php
 				
 				$sql = 'SELECT *
 					FROM notas
@@ -146,7 +152,8 @@ encabezado('Ingreso de Calificaciones');
 				}
 				
 				?>
-				puntos</td>
+				</td>
+				<td align="center"><?php echo '<input name="remedial[' . $arreglo['id_alumno'] . ']" type="text" size="5" />'; ?></td>
 			</tr>
 			
 			<?php
