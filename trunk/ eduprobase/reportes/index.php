@@ -32,6 +32,7 @@ require_once('../conexion.php');
 		<li><a href="#"><img src="../images/iconos/144.ico" /> Certificaciones Anuales</a></li>
 		<li><a href="fgenerales.php"><img src="../images/iconos/buddy-signon.ico" /> Cuadros Generales de Calificaciones</a></li>
 		<li><a href="carta_editar.php" target="_blank"><img src="../images/iconos/22.ico"/> Carta para Edición de Calificación </a></li>
+	    <li><a href="../notasyremedial/index.php" target="_blank"><img src="../images/iconos/134.ico"/> Cuadros de Notas + Remedial por Curso</li>
 	</ul>
 	<br /><br />
 

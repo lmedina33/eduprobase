@@ -35,13 +35,13 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 {
 	if ($i) $pdf->new_page();
 	
-	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(80), 60);
+/*	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(80), 60); */
 	
-	$pdf->text(100, $pdf->top(25), 'INSTITUTO NACIONAL DE EDUCACION BASICA', 8, 'center', $pdf->page_width(125));
-	$pdf->text(100, $pdf->top(11), 'ESCUELA NORMAL RURAL No. 5', 8, 'center', $pdf->page_width(125));
-	$pdf->text(100, $pdf->top(11), '&quot;Prof. Julio Edmundo Rosado Pinelo&quot;', 8, 'center', $pdf->page_width(125));
-	$pdf->text(100, $pdf->top(11), 'Santa Elena, Flores, Pet&eacute;n. Tel. 79262393', 8, 'center', $pdf->page_width(125));
-	$pdf->text(100, $pdf->top(11), '&quot;SIMIENTE DE CULTURA EN PET&Eacute;N&quot;', 8, 'center', $pdf->page_width(125));
+	$pdf->text(100, $pdf->top(25), 'COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA', 8, 'center', $pdf->page_width(125));
+	//$pdf->text(100, $pdf->top(11), 'ESCUELA NORMAL RURAL No. 5', 8, 'center', $pdf->page_width(125));
+	//$pdf->text(100, $pdf->top(11), '&quot;Prof. Julio Edmundo Rosado Pinelo&quot;', 8, 'center', $pdf->page_width(125));
+	$pdf->text(100, $pdf->top(11), 'Santa Elena, Flores, Pet&eacute;n. Tel. 79262349', 8, 'center', $pdf->page_width(125));
+	//$pdf->text(100, $pdf->top(11), '&quot;SIMIENTE DE CULTURA EN PET&Eacute;N&quot;', 8, 'center', $pdf->page_width(125));
 	$pdf->text(100, $pdf->top(20), 'FICHA DE RENDIMIENTO ESCOLAR', 11, 'center', $pdf->page_width(125));
 	
 	$datos = array(

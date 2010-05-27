@@ -17,11 +17,10 @@
   <tr>
     <td><table width="800" border="0">
       <tr>
-        <td width="208"><img src="../images/logo.jpg" width="150" height="150" /></td>
+        <td width="208">&nbsp;</td>
         <td width="582"><div align="center">
           <p><span class="Estilo3"><br />
-              <span class="Estilo8">INEB Adscrito a la Escuela Normal<br />
-              Rural No. 5 Prof. &quot;Julio Edmundo Rosado Pinelo&quot; <br />
+              <span class="Estilo8">COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA <br />
               Santa Elena, Pet&eacute;n.</span></span><br />
           </p>
         </div></td>
@@ -38,7 +37,8 @@
       <p align="left" class="Estilo3"><br />
         <br />
         Se&ntilde;or Director<br />
-        INEB Adscrito Escuela Normal.<br />
+        Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria
+        <br />
         Presente.<br />
         <br />
         <br />
