@@ -16,10 +16,18 @@ if($arreglo = mysql_fetch_assoc($ejecutar))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Documento sin t&iacute;tulo</title>
+<title>Compromiso de Responsabilidad de Estudios</title>
+
 <style type="text/css">
 <!--
+.text1{ font-family:Tahoma; font-size:11px;}
+
 .Estilo6 {font-size: 24px}
+.Estilo8 {
+	font-size: 18px;
+	font-weight: bold;
+}
+.Estilo10 {font-size: 16px}
 -->
 </style>
 </head>
@@ -30,12 +38,10 @@ if($arreglo = mysql_fetch_assoc($ejecutar))
     <td width="23">&nbsp;</td>
     <td width="729"><table width="754" border="0">
       <tr>
-        <td width="189"><div align="center"><img src="../images/logo.jpg" width="110" height="117" /></div></td>
-        <td width="555" valign="top"><div align="center"><br class="Estilo6" />
-        MINISTERIO DE EDUCACION<br />
-        ESCUELA NORMAL RURAL No.5 &quot;Prof. JULIO E. ROSADO PINELO&quot;<br />
-        NIVEL DE EDUCACION MEDIA
-</div></td>
+        <td width="150"><div align="center">LOGOTIPO</div></td>
+        <td width="594" valign="top"><div align="center"><br class="Estilo6" />
+            <span class="Estilo8">COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA</span> <br />
+            <span class="Estilo10">&quot;C.M.E.M.O.U.&quot;</span></div></td>
       </tr>
     </table>    </td>
     <td width="18">&nbsp;</td>
@@ -44,55 +50,64 @@ if($arreglo = mysql_fetch_assoc($ejecutar))
     <td height="821">&nbsp;</td>
     <td><p align="center"><br />
         <strong>COMPROMISO DE RESPONSABILIDAD DE ESTUDIOS </strong></p>
-      <p align="justify">Para estudiantes menores de edad o mayores de edad bajo la tutela de los padres o encargados. El que debe ser complemtado y firmado por las personas que se indican, PREVIO a la inscripci&oacute;n del alumno.</p>
-      <p align="justify">En el municipio de Flores del departamento de Pet&eacute;n, el dia__ de _____ del a&ntilde;o___ ante el infranscrito Director de la Escuela Normal Rural No. 5 &quot;Profesor Julio Edmundo Rosado Pinelo&quot;, se presenta el (la) se&ntilde;or (a):  <?php echo $arreglo['encargado']; ?> mayor de edad, con C&eacute;dula de Vecindad N&uacute;mero de Orden <?php echo $arreglo['orden']; ?> y Registro <?php echo $arreglo['registro']; ?> extendida en <?php echo $arreglo['extendida']; ?> con profesi&oacute;n u oficio <?php echo $arreglo['profesion']; ?>, laborando actualmente en <?php echo $arreglo['labora']; ?> con direcci&oacute;n en <?php echo $arreglo['direccion_labora']; ?> , tel&eacute;fono: <?php echo $arreglo['telefono2']; ?> , manifiesta que es: <?php echo $arreglo['emergencia']; ?> del alumno (a): <?php echo $arreglo['nombre_alumno']; ?><?php echo " , " ?><?php echo $arreglo['apellido']; ?> de <?php echo $arreglo['edad']; ?> de edad, cursante del <?php echo $arreglo['id_grado']; ?> con direccion en <?php echo $arreglo['direccion']; ?> tel&eacute;fono <?php echo $arreglo['telefono1']; ?>, quien por este medio o acto suscriben El presente COMPROMISO DE RESPONSABILIDAD DE ESTUDIO de acuerdo a las Cl&aacute;usulas que se se&ntilde;alan en los siguientes puntos: </p>
-      <p>PRIMERO: Que el alumno (a): <?php echo $arreglo['nombre_alumno']; ?><?php echo " , " ?><?php echo $arreglo['apellido']; ?> <br />
-      se compromete a cumplir con las obligaciones que le impone el Articulo 34 de la Ley de Educaci&oacute;n Nacional, Decreto <br />
-      No. 12-91 del Congreso de la Rep&uacute;blica, con el Reglamento Interno del Centro Educativo y con lo siguiente:<br />
-      </p>
-      <table width="773" border="0">
-        <tr>
-          <td width="19">a)</td>
-          <td width="744"><div align="justify">Cumplir con todas las obligaciones inherentes a su calidad de alumno y las que sean establecidas por las autoridades educativas, y espec&iacute;ficamente por el Director del Plantel, Personal T&eacute;cnico-Administrativo, y Catedr&aacute;ticos;</div></td>
-        </tr>
-        <tr>
-          <td>b)</td>
-          <td>Respectar a las autoridades T&eacute;cnico-Administrativas, a los Docentes y Estudiantes del Plantel; </td>
-        </tr>
-        <tr>
-          <td>c)</td>
-          <td>Observar buena conducta en todos sus actos, tanto dentro como fuera del Plantel; </td>
-        </tr>
-        <tr>
-          <td>d)</td>
-          <td><div align="justify">Asistir puntualmente y diariamente a sus clases. Si por causa justificada no pudiera hacerlo, deber&aacute; presentar excusa escrita a la Direcci&oacute;n del Plantel, firmada por el Padre, Madr&eacute; o Encargado; </div></td>
-        </tr>
-        <tr>
-          <td>e)</td>
-          <td><div align="justify">Abstenerse de participar en su per&iacute;odo de estudio en el Plantel, en actividades no aurotrizadas por la Direccion del establecimiento; </div></td>
-        </tr>
-        <tr>
-          <td>f)</td>
-          <td>Colaborar por mantener en buenas condiciones el edificio, sus instalaciones, mobiliario y equipo del plantel; </td>
-        </tr>
-        <tr>
-          <td>g)</td>
-          <td>Asistir con presentaci&oacute;n personal adecuada en cuanto a higiene corporal y de vestuario; </td>
-        </tr>
-        <tr>
-          <td>h)</td>
-          <td><div align="justify">Pagar &iacute;ntegramente, El valor de los libros, equuipo, &uacute;tiles, mobiliario e instalaciones de cuya p&eacute;rdida, deterioro o destrucci&oacute;n resulte individual o grupalmente responsable; </div></td>
-        </tr>
-        <tr>
-          <td>i)</td>
-          <td><div align="justify">Rendir el respeto que se merece nuestro s&iacute;mbolos patrios, participar en actos y eventos de car&aacute;cter c&iacute;vico que se programen por el Ministerio de Educaci&oacute;n o por el Plantel Educativo. </div></td>
-        </tr>
-      </table>
-      <p><br />    
+      <p align="justify">En Santa Elena, Pet&eacute;n, el d&iacute;a <?php echo date('d');?> de _______________de <?php echo date('Y'); ?>,ante&nbsp; mi, el( la) infrascrito(a) Director(a) del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, se present&oacute; <?php echo $arreglo['encargado'];?>  mayor de edad, con C&eacute;dula de Vecindad No. de Orden <?php echo $arreglo['orden']; ?> y de Registro <?php echo $arreglo['registro']; ?> manifiesta&nbsp; que&nbsp; es&nbsp; <?php $arreglo['emergencia']; ?> del&nbsp; (de la) alumno <?php echo $arreglo['nombre_alumno'];?><?php echo " , "?><?php echo $arreglo['apellido']; ?> de&nbsp; <?php echo $arreglo['edad']; ?> de&nbsp; edad,&nbsp; cursante&nbsp; del <?php echo $arreglo['id_grado'];?> con Orientaci&oacute;n en Computaci&oacute;n, quienes por este acto convienen SUSCRIBIR EL PRESENTE COMPROMISO DE RESPONSABILIDADES DE ESTUDIO, de acuerdo a las cl&aacute;usulas que se se&ntilde;alan en los siguientes puntos: PRIMERO: El (la) alumno (a)<?php echo $arreglo['nombre_alumno'];?><?php echo " , "?><?php echo $arreglo['apellido']; ?> se compromete a lo siguiente:<br />
+          <br />
+         &nbsp;&nbsp;&nbsp;&nbsp;a) Cumplir con todas las obligaciones que en su calidad de alumno le sean requeridas por las autoridades educativas y espec&iacute;ficamente por el (la) Director (a) del Colegio, Personal T&eacute;cnico-Administrativo, Administrativo y Catedr&aacute;ticos. <br />
+         <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;b) Respetar a las Autoridades T&eacute;cnico-Administrativas, Administrativas, Docentes y Servicio. <br />
         <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;c) Asistir con puntualidad a sus clases y actividades programadas por la Direcci&oacute;n del Establecimiento, en caso de ausencia presentar excusa por escrito firmada por el padre, madre o encargado. <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;d) Observar buena conducta en todos los actos, tanto dentro como fuera del establecimiento. <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;e) Presentarse debidamente uniformado, (CAMISA y BLUSA), o playera del Colegio. <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;f) Colaborar con mantener en buenas condiciones el edificio, mobiliario y equipo del establecimiento. <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;g) Pagar &iacute;ntegramente el valor del equipo, &uacute;tiles y mobiliario, de cuya p&eacute;rdida o deterioro resulten responsables. <br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;h) Respetar nuestros&nbsp; S&iacute;mbolos Patrios, participar en desfiles, actos y eventos de car&aacute;cter c&iacute;vico, sociales y deportivos que se programen en el establecimiento y en la comunidad. <br />
+        <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;i) Cumplir fielmente con el Reglamento de Disciplina&nbsp; del establecimiento.</p>
+      <p align="justify">SEGUNDO: El (la) se&ntilde;or (a) <?php echo $arreglo['encargado'];?> Se compromete a :<br />
+        <br /> 
+      &nbsp;&nbsp;&nbsp;&nbsp;a) Velar porque su hijo (a) cumpla con las cl&aacute;usulas contenidas en el punto anterior del presente compromiso y a la vez responder mancomunadamente con el educando de lo prescrito en la cl&aacute;usula &ldquo;g&rdquo; del punto primero. <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;b) Pagar su colegiatura por anticipado en un plazo de cinco d&iacute;as de cada mes en el Colegio o Banco&nbsp; que se designe. <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;c) Presentarse a la Direcci&oacute;n del establecimiento u &oacute;rganos de administraci&oacute;n cuando su presencia sea requerida. <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;d) No permitir que los alumnos traigan al establecimiento objetos de valor ni excesivas cantidades de dinero. <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;e) Presentarse mensualmente al establecimiento para ver el avance de aprendizaje y comportamiento de su hijo. <br />
+      <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;f) Efectuar los pagos de inscripci&oacute;n y colegiatura correspondientes al ciclo escolar cursado, comprendiendo del mes de enero a octubre, seg&uacute;n lo establece la Resoluci&oacute;n respectiva, MAS el pago de Computaci&oacute;n, la cual se cursar&aacute; en una academia particular o Laboratorio de Computaci&oacute;n del Colegio.<br />
+      <br />
+      TERCERO: Para garantizar la buena disciplina del establecimiento, as&iacute; como para sancionar las faltas en que incurra el alumno, la Direcci&oacute;n del mismo podr&aacute; hacer uso de las sanciones siguientes:<br />
+      <br />      
+      &nbsp;&nbsp;1&ordm;. Amonestaci&oacute;n Verbal <br />
+      &nbsp;&nbsp;2&ordm;. Amonestaci&oacute;n Escrita <br />
+      &nbsp;&nbsp;3&ordm;. Suspensi&oacute;n de estudios por un per&iacute;odo no mayor de un mes, y <br />
+      &nbsp;&nbsp;4&ordm;. Cancelaci&oacute;n de la matr&iacute;cula. &nbsp; <br />
+      <br />
+      Estas sanciones ser&aacute;n consideradas y aplicadas seg&uacute;n la gravedad de la falta o su reincidencia, de lo cual se notificar&aacute; al Padre, Madre o Encargado. &nbsp; <br />
+      <br />
+      CUARTO: Cuando el alumno sea mayor de edad y cometa actos que sean constitutivos de faltas y delitos, dentro o fuera del establecimiento educativo, ser&aacute; procesado conforme las leyes del Pa&iacute;s. &nbsp; <br />
+      <br />
+      QUINTO: Los suscritos, plenamente conscientes del contenido, alcance o efecto del presente COMPROMISO, lo aceptamos y firmamos de conformidad. <br />
+      <br />
       </p>
-      <p>&nbsp;</p>
-    <p>&nbsp;</p></td>
+      <table width="728" border="0">
+        <tr>
+          <td><div align="center">(f)______________________________</div></td>
+          <td><div align="center">(f)______________________________</div></td>
+        </tr>
+        <tr>
+          <td><div align="center" class="text1"><?php echo $arreglo['nombre_alumno'];?><?php echo ","?><?php echo $arreglo['apellido'];?></div></td>
+          <td><div align="center" class="text1"><?php echo $arreglo['encargado'];?></div></td>
+        </tr>
+      </table>      <p align="justify">&nbsp;</p>
+    </td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -102,4 +117,4 @@ if($arreglo = mysql_fetch_assoc($ejecutar))
   </tr>
 </table>
 </body>
-</html>
+</html>
