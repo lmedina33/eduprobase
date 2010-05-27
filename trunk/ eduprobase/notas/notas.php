@@ -109,7 +109,8 @@ encabezado('Ingreso de Calificaciones');
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 				<td align="center"><strong>Nota 1</strong></td>
-				<td align="center"><strong>Remedial<strong></td>
+				<td width="100" align="center"><strong>Remedial</td>
+				<td width="141" align="center">NOTA TOTAL <strong></td>
 			</tr>
 			<?php
 			
@@ -151,9 +152,9 @@ encabezado('Ingreso de Calificaciones');
 					echo '<input name="nota[' . $arreglo['id_alumno'] . ']" type="text" size="5" />';
 				}
 				
-				?>
-				</td>
+				?>				</td>
 				<td align="center"><?php echo '<input name="remedial[' . $arreglo['id_alumno'] . ']" type="text" size="5" />'; ?></td>
+				<td align="center">&nbsp;</td>
 			</tr>
 			
 			<?php
