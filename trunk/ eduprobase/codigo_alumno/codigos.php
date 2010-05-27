@@ -60,7 +60,7 @@ require_once('../conexion.php');
 				
 				echo $arreglo['nombre'] . '<br/> <br/> Secci&oacute;n: ', $arreglo['nombre_seccion'];
 				?>				</td>
-                      <td width="23"><div align="center"><a href="../index.php"><img src="../images/logo.jpg" width="110" height="117" border="0" title="Ir al inicio..." /></a></div></td>
+                      <td width="23"><div align="center"><a href="../index.php"></a></div></td>
                     </tr>
                   </table>
                 <br />
