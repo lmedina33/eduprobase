@@ -123,7 +123,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		$notas = mysql_fetch_assoc($ejecutar3);
 		
 		$numeros[] = array(
-			'text' => $notas['nota'],
+			'text' => $notas['nota'] + $notas['nota2'],
 			'align' => 'center'
 		);
 	}
