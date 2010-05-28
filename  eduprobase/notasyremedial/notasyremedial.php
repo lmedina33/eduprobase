@@ -127,14 +127,6 @@ encabezado('Ingreso de Calificaciones');
 			
 			while($arreglo = mysql_fetch_array($ejecutar))
 			{
-			
-			?>
-					
-			<tr>
-				<td width="139"><?php echo $arreglo['carne']; ?></td>
-				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
-				<td width="168" align="center"><?php
-				
 				$sql = 'SELECT *
 					FROM notas
 					WHERE id_alumno = ' . (int) $arreglo['id_alumno'] . '
@@ -143,18 +135,20 @@ encabezado('Ingreso de Calificaciones');
 						AND id_bimestre = ' . (int) $examen;
 				$ejecutar_notas = mysql_query($sql);
 				
+				$is_nota = false;
 				if ($cada_nota = mysql_fetch_array($ejecutar_notas))
 				{
-					echo $cada_nota['nota'];
+					$is_nota = true;
 				}
-				else
-				{
-					echo '<input name="nota[' . $arreglo['id_alumno'] . ']" type="text" size="5" />';
-				}
-				
-				?>				</td>
-				<td align="center"><?php echo '<input name="remedial[' . $arreglo['id_alumno'] . ']" type="text" size="5" />'; ?></td>
-				<td align="center">&nbsp;</td>
+			
+			?>
+					
+			<tr>
+				<td width="139"><?php echo $arreglo['carne']; ?></td>
+				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
+				<td width="168" align="center"><?php echo $cada_nota['nota']; ?></td>
+				<td align="center"><?php echo $cada_nota['nota2']; ?></td>
+				<td align="center"><?php echo $cada_nota['nota'] + $cada_nota['nota2']; ?></td>
 			</tr>
 			
 			<?php
