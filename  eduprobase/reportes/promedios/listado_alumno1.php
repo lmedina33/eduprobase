@@ -80,7 +80,7 @@ require_once('../../conexion.php');
 				
 				$anio = date("Y");
 				
-				$seleccionar = "SELECT *, AVG(n.nota) AS promedio
+				$seleccionar = "SELECT *, AVG(n.nota) AS promedio, AVG(n.nota2) AS promedio2
 					FROM alumno a, grado g, reinscripcion r, notas n, cursos c
 					WHERE r.id_alumno = a.id_alumno
 						AND g.id_grado = r.id_grado
@@ -96,12 +96,14 @@ require_once('../../conexion.php');
 						AND c.id_curso = n.id_curso
 					GROUP BY a.id_alumno
 					ORDER BY promedio DESC";
-				$ejecutar = mysql_query($seleccionar);
+				$ejecutar = mysql_query($seleccionar) or die(mysql_error());
 				
 				$j = 0;
 				$i = 0;
 				$k = 0;
 				while($arreglo = mysql_fetch_assoc($ejecutar)){
+				
+				$arreglo['promedio'] += $arreglo['promedio2'];
 				
 				?></td>
               </tr>
