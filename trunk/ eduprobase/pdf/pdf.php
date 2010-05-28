@@ -496,6 +496,11 @@ class _pdf
 					$cell_area = $widths[$j] - ($padding * 2);
 					$pos_text = $pos_left + $padding;
 					
+					if (!isset($td['words']))
+					{
+						$td['words'] = 0;
+					}
+					
 					$text_lines = $this->text_wrap($td['text'], $fontsize, $cell_area, $pos_text, $pos_top, $fontsize + 3, $td['align'], $td['words']);
 					
 					$max_text_top = (($text_lines > 1) ? (($fontsize + 3) * ($text_lines - 1)) : 0) + $padding;
