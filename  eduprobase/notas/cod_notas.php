@@ -39,10 +39,10 @@ foreach ($remedial as $alumno => $valor)
 			AND id_bimestre = ' . (int) $examen;
 	$ejecutar2 = mysql_query($sql);
 	
-	if ($result = mysql_fetch_array($ejecutar2))
+	if ($result2 = mysql_fetch_array($ejecutar2))
 	{
 		$sql = 'UPDATE notas SET nota2 = ' . $valor . '
-			WHERE id_nota = ' . $result['id_nota'];
+			WHERE id_nota = ' . $result2['id_nota'];
 		$update = mysql_query($sql);
 	}
 	else
