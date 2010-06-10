@@ -91,7 +91,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	
 	while ($row = mysql_fetch_array($ejecutar2))
 	{
-		$row['examen'] = str_replace('Bimestre', 'Bi', $row[]);
+		$row['examen'] = str_replace('Bimestre', 'Bi', $row['examen']);
 		
 		$infot[0][] = array('text' => $row['examen'], 'align' => 'center', 'width' => 65);
 		$infot[0][] = array('text' => 'R', 'align' => 'center', 'width' => 27);
