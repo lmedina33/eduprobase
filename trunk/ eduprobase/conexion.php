@@ -5,8 +5,8 @@ $contrasena ='anjorame1984';
 $db = 'school';
 */
 $usuario = 'root';
-$contrasena ='anjorame';
-$db = 'edupro';
+$contrasena ='8i8o11ag';
+$db = 'eduprobase';
 
 $servidor = 'localhost';
 
