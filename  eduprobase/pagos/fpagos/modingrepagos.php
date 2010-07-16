@@ -25,8 +25,9 @@ require_once('../../conexion.php');
 <td width="850" bgcolor="#FFFFFF">
 	<?php include('../menu2.php'); ?>
 		<div class="title"> Visualizacion de Pagos del Grado</div>
-        <br />
-		<?php 
+        <form id="form1" name="form1" method="get" action="">
+        
+            <?php 
 		
 		$id_grado = $_GET['grado'];
 		
@@ -37,20 +38,20 @@ require_once('../../conexion.php');
 		while($arreglo = mysql_fetch_assoc($ejecutar))
 		{
 		?>
-		
-		
-  <br />
-  <table width="800" border="0">
-  <tr>
-  <td class="text1" width="50"></td>
-  <td class="text1" width="150" align="left"><?php echo $arreglo['nombre']; ?></td>
-  <td class="text1" width="100" align="left"><?php echo $arreglo['nombre_fpagos']; ?> </td>
-  <td class="text1" width="75" align="left"><?php echo $arreglo['precio_fpagos'];?> </td>
-
-  </tr>
-  </table>
-  <?php } ?>
-  </td>
+          <table width="709" border="0">
+            <tr>
+              <td class="text1" width="62"></td>
+              <td class="text1" width="209" align="left"><?php echo $arreglo['nombre']; ?></td>
+              <td class="text1" width="178" align="left"><?php echo $arreglo['nombre_fpagos']; ?> </td>
+              <td class="text1" width="122" align="left"><?php echo $arreglo['precio_fpagos'];?></td>
+              <td class="text1" width="52" align="left"><div align="center"><a href="modpagos.php?id_fpagos=<?php echo $arreglo['id_fpagos']; ?>"><img src="../tools.png" width="25" height="25" border="0" title="Modificaci&oacute;n de Pago..." /></a>Mod</div></td>
+              <td class="text1" width="60" align="left"><div align="center"><a href="delfpagos.php?id_fpagos=<?php echo $arreglo['id_fpagos'];?>"><img src="../cancel_sign.png" width="25" height="25" border="0" title="Eliminar Forma de Pago..." /></a>Del</div></td>
+            </tr>
+          </table>
+          <?php } ?>
+<p>&nbsp;</p>
+        </form>
+    </td>
 
 </tr>
 </table>
