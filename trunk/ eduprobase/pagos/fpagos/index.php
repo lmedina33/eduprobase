@@ -37,7 +37,7 @@ require_once('../../conexion.php');
     <td>&nbsp;</td>
   </tr>
   <tr>
-    <td width="194">&nbsp;</td>
+    <td width="194"><div align="right"><img src="../../images/iconos/120.ico" /></div></td>
     <td width="392"><div class="text1"><a href="ingrepagos.php">Ingreso de Pagos </a></div></td>
     <td width="132">&nbsp;</td>
   </tr>

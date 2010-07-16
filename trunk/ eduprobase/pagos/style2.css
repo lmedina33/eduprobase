@@ -5,6 +5,14 @@ body {
 
 .text1{ font-family:tahoma; font-size:11px;}
 
+.text2{ font-family:tahoma; font-size:12px; color:#006600;}
+
+.text3red { font-family: tahoma; font-size:12px; color:#990000;}
+
+.text3redmini { font-family: tahoma; font-size:0px; color:#990000;}
+
+.text4blue{ font-family:tahoma; font-size:10px; color:#000099;}
+
 p, div, span, input, textarea, select, a, optgroup {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
