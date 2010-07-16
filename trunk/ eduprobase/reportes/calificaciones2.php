@@ -35,7 +35,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 {
 	if ($i) $pdf->new_page();
 	
-/*	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(80), 60); */
+	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(100), 60); 
 	
 	$pdf->text(100, $pdf->top(25), 'COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA', 8, 'center', $pdf->page_width(125));
 	//$pdf->text(100, $pdf->top(11), 'ESCUELA NORMAL RURAL No. 5', 8, 'center', $pdf->page_width(125));
