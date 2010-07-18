@@ -93,9 +93,9 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	{
 		$row['examen'] = str_replace('Bimestre', 'Bi', $row['examen']);
 		
-		$infot[0][] = array('text' => $row['examen'], 'align' => 'center', 'width' => 30);
+		$infot[0][] = array('text' => $row['examen'], 'align' => 'center', 'width' => 35);
 		$infot[0][] = array('text' => 'R', 'align' => 'center', 'width' => 27);
-		$infot[0][] = array('text' => 'T', 'align' => 'center', 'width' => 27);
+		$infot[0][] = array('text' => 'T', 'align' => 'center', 'width' => 35);
 	}
 	
 	$sql = "SELECT *
@@ -132,13 +132,15 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			$ejecutar4 = mysql_query($sql);
 			$notas = mysql_fetch_assoc($ejecutar4);
 			
+			$total = $notas['nota'] + $notas['nota2'];
+			
 			$infot[$j][] = array('text' => $notas['nota'], 'align' => 'center');
 			$infot[$j][] = array('text' => $notas['nota2'], 'align' => 'center');
-			$infot[$j][] = array('text' => $notas['nota'] + $notas['nota2'], 'align' => 'center');
+			$infot[$j][] = array('text' => $total, 'align' => 'center');
 			
 			$total_examenes++;
 			
-			if ($notas['nota'])
+			if ($total)
 			{
 				if (!isset($note_sum[$row['id_examen']]))
 				{
@@ -150,7 +152,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 					$note_quant[$row['id_examen']] = 0;
 				}
 				
-				$note_sum[$row['id_examen']] += $notas['nota'];
+				$note_sum[$row['id_examen']] += $total;
 				$note_quant[$row['id_examen']]++;
 			}
 		}
@@ -163,9 +165,9 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	
 	foreach ($note_sum as $note_id => $note_each)
 	{
+		$infot[$j][] = array('text' => '', 'align' => 'center');
+		$infot[$j][] = array('text' => '', 'align' => 'center');
 		$infot[$j][] = array('text' => number_format(($note_each / $note_quant[$note_id]), 2), 'align' => 'center');
-		$infot[$j][] = array('text' => '', 'align' => 'center');
-		$infot[$j][] = array('text' => '', 'align' => 'center');
 	}
 	
 	for ($i = 0; $i < ($total_examenes - count($note_sum)); $i++)
