@@ -8,7 +8,7 @@ require_once(XFS . 'pdf/convert.php');
 
 $cv = new convert();
 
-$pdf = new _pdf();
+$pdf = new _pdf('LEGAL');
 $pdf->cp->selectFont(XFS . 'pdf/helvetica.afm');
 
 $page_count = 0;
@@ -70,7 +70,13 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 
 	31/10/' . date('Y') . ', donde consta que se hizo acreedor (a) a las notas siguientes:';
 	
-	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 90, 35, $pdf->top(50), 15);
+	/*
+	185 de margen derecho
+	65 margen izquierdo
+	20 separacion de lineas de parrafo
+	*/
+	
+	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
 	
 	$infot = array(
 		array(
@@ -155,23 +161,23 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		$j++;
 	}
 	
-	$pdf->multitable($infot, 35, $pdf->top(100), 5, 9, 1, array('last_height' => $pdf->top()));
+	$pdf->multitable($infot, 65, $pdf->top(135), 5, 9, 1, array('last_height' => $pdf->top()));
 	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
-	a los treinta y un d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
+	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
 	
-	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 90, 35, $pdf->top(50), 15);
+	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
 	
 	$names = array(array(
-		array('text' => 'Profa. Esperanza Trinidad G&oacute;mez Ayala', 'align' => 'center'),
-		array('text' => 'Prof. Jorge Antonio Ochaeta Requena', 'align' => 'center')
+		array('text' => 'Prof. Jorge Antonio Ochaeta Requena', 'align' => 'center'),
+		array('text' => 'Profa. Esperanza Trinidad G&oacute;mez Ayala', 'align' => 'center')
 	),
 	array(
-		array('text' => 'Directora', 'align' => 'center'),
-		array('text' => 'Secretario', 'align' => 'center')
+		array('text' => 'Secretario', 'align' => 'center'),
+		array('text' => 'Directora', 'align' => 'center')
 	));
 	
-	$pdf->multitable($names, 35, $pdf->top(85), 5, 9, 0);
+	$pdf->multitable($names, 35, $pdf->top(100), 5, 9, 0);
 	
 	$i++;
 }
