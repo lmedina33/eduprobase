@@ -38,12 +38,13 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 {
 	if ($i) $pdf->new_page();
 	
-	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(125), 60); 
+	$pdf->cp->addJpegFromFile('../images/logo2.jpg', 225, $pdf->cp->cy(100), 175);
+	$pdf->cp->addJpegFromFile('../images/bg.jpg', 185, $pdf->cp->cy(600), 250); 
 	
-	$pdf->text(100, $pdf->top(75), 'COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA', 12, 'center', $pdf->page_width(125));
+	/*$pdf->text(100, $pdf->top(75), 'COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA', 12, 'center', $pdf->page_width(125));
 	$pdf->text(100, $pdf->top(18), '"CMEMOU"', 12, 'center', $pdf->page_width(125));
 	$pdf->text(100, $pdf->top(15), 'Santa Elena, Flores, Pet&eacute;n.', 12, 'center', $pdf->page_width(125));
-	
+	*/
 	$grado = ucwords(strtolower(implode(' ', array_splice(explode(' ', $arreglo['nombre']), 0, 2))));
 	$grado_sub = '';
 	
@@ -64,11 +65,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			break;
 	}
 	
-	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, 
-	Flores, Pet&eacute;n, Resoluci&oacute;n No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el(la) alumno(a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el 
-	Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ' del ' . $grado_sub . ', con C&oacute;digo Personal 
-	No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 
-	31/10/' . date('Y') . ', donde consta que se hizo acreedor (a) a las notas siguientes:';
+	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el(la) alumno(a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ' del ' . $grado_sub . ', con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 31/10/' . date('Y') . ', donde consta que se hizo acreedor (a) a las notas siguientes:';
 	
 	/*
 	185 de margen derecho
@@ -76,7 +73,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	20 separacion de lineas de parrafo
 	*/
 	
-	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
+	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(150), 20);
 	
 	$infot = array(
 		array(
@@ -166,7 +163,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
 	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
 	
-	$pdf->text_wrap($text_block, 9, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
+	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
 	
 	$names = array(array(
 		array('text' => 'Prof. Jorge Antonio Ochaeta Requena', 'align' => 'center'),
@@ -177,7 +174,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		array('text' => 'Directora', 'align' => 'center')
 	));
 	
-	$pdf->multitable($names, 35, $pdf->top(100), 5, 9, 0);
+	$pdf->multitable($names, 35, $pdf->top(100), 5, 11, 0);
 	
 	$i++;
 }
