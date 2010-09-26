@@ -493,7 +493,14 @@ class _pdf
 				
 				if (f($td['text']))
 				{
-					$cell_area = $widths[$j] - ($padding * 2);
+					$tmp_padding = ($padding * 2);
+					
+					if (strlen($td['text']) > 15)
+					{
+						$tmp_padding += 10;
+					}
+					
+					$cell_area = $widths[$j] - $tmp_padding;
 					$pos_text = $pos_left + $padding;
 					
 					if (!isset($td['words']))
@@ -511,7 +518,8 @@ class _pdf
 						
 						if ($text_lines > 1)
 						{
-							$accum_top -= ($fontsize / 2) + ($text_lines + 0);
+							$accum_top -= ($fontsize / 2) + ($text_lines - 1);
+							$max_top += 1;
 						}
 					}
 				}
@@ -574,13 +582,31 @@ class _pdf
 		$line_height = (!$line_height) ? $fontsize + 2 : $line_height;
 		$text_lines = $this->calculate_lines($width, $fontsize, $text, $line_limit);
 		
+		$gugu = $y;
+		
+		$brs = 0;
 		foreach ($text_lines as $row)
 		{
-			$this->text($x, $y, $row, $fontsize, $align, $width);
-			$y += $line_height + 1;
+			if (strpos($row, '[br]') !== false)
+			{
+				//$gugu += 20;
+				$brs++;
+				
+				$row = str_replace('[br]', '', $row);
+			}
+			
+			$this->text($x, $gugu, $row, $fontsize, $align, $width);
+			$gugu += $line_height + 1;
+			$y = $gugu;
 		}
 		
-		return count($text_lines);
+		$misshi = count($text_lines);
+		if ($misshi > 1 && $brs)
+		{
+			$brs = 0;
+		}
+		
+		return $misshi + $brs;
 	}
 	
 	function words($width, $fontsize, $text, $maxline = false, $skip_short = true)
