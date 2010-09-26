@@ -73,7 +73,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	20 separacion de lineas de parrafo
 	*/
 	
-	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(150), 20);
+	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(150), 25);
 	
 	$infot = array(
 		array(
@@ -117,6 +117,9 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			$ejecutar4 = mysql_query($sql);
 			$notas = mysql_fetch_assoc($ejecutar4);
 			
+			if (!isset($notas['nota'])) $notas['nota'] = 0;
+			if (!isset($notas['nota2'])) $notas['nota2'] = 0;
+			
 			$total = $notas['nota'] + $notas['nota2'];
 			
 			$per_curse += $total;
@@ -147,18 +150,27 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		$resultado = ($per_sum >= 60) ? 'Aprobado' : 'No aprobado';
 		if (!$per_sum) $resultado = '';
 		
+		if ($per_sum)
+		{
+			$lets = ucfirst($cv->cv($per_sum));
+		}
+		else
+		{
+			$lets = '';
+		}
+		
 		$infot[$j] = array(
 			array('text' => $j, 'align' => 'center', 'width' => 25),
-			array('text' => $arreglo2['nombre_curso'], 'align' => 'left'),
+			array('text' => $arreglo2['nombre_curso'] . '[br]', 'align' => 'left'),
 			array('text' => $per_sum, 'align' => 'center', 'width' => 30),
-			array('text' => ucfirst($cv->cv($per_sum)), 'align' => 'left'),
+			array('text' => $lets, 'align' => 'left'),
 			array('text' => $resultado, 'align' => 'center', 'width' => 75)
 		);
 		
 		$j++;
 	}
 	
-	$pdf->multitable($infot, 65, $pdf->top(135), 5, 9, 1, array('last_height' => $pdf->top()));
+	$pdf->multitable($infot, 65, $pdf->top(160), 5, 9, 1, array('last_height' => $pdf->top()));
 	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
 	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
@@ -168,6 +180,10 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	$names = array(array(
 		array('text' => 'Prof. Jorge Antonio Ochaeta Requena', 'align' => 'center'),
 		array('text' => 'Profa. Esperanza Trinidad G&oacute;mez Ayala', 'align' => 'center')
+	),
+	array(
+		array('text' => '', 'align' => 'center'),
+		array('text' => '', 'align' => 'center')
 	),
 	array(
 		array('text' => 'Secretario', 'align' => 'center'),
