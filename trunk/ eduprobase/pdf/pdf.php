@@ -582,31 +582,13 @@ class _pdf
 		$line_height = (!$line_height) ? $fontsize + 2 : $line_height;
 		$text_lines = $this->calculate_lines($width, $fontsize, $text, $line_limit);
 		
-		$gugu = $y;
-		
-		$brs = 0;
 		foreach ($text_lines as $row)
 		{
-			if (strpos($row, '[br]') !== false)
-			{
-				//$gugu += 20;
-				$brs++;
-				
-				$row = str_replace('[br]', '', $row);
-			}
-			
-			$this->text($x, $gugu, $row, $fontsize, $align, $width);
-			$gugu += $line_height + 1;
-			$y = $gugu;
+			$this->text($x, $y, $row, $fontsize, $align, $width);
+			$y += $line_height + 1;
 		}
 		
-		$misshi = count($text_lines);
-		if ($misshi > 1 && $brs)
-		{
-			$brs = 0;
-		}
-		
-		return $misshi + $brs;
+		return count($text_lines);
 	}
 	
 	function words($width, $fontsize, $text, $maxline = false, $skip_short = true)
