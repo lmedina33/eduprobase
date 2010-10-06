@@ -51,29 +51,29 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	switch ($arreglo['id_grado'])
 	{
 		case 3:
-			$grado_sub = '';
+			$grado_sub = ' Ciclo de Educaci&oacute; B&aacute;sica';
 			 break;
 		case 4:
 		case 5:
 		case 6:
-			$grado_sub = '';
+			$grado_sub = ' Ciclo de la Carrera de Perito Contador con Orientaci&oacute;n en Computaci&oacute;n';
 			break;
 		case 7:
 		case 8:
 		case 9:
-			$grado_sub = '';
+			$grado_sub = ' Ciclo de la Carrera de Perito en Administraci&oacute;n de Empresas con Orientaci&oacute;n en Computaci&oacute;n';
 			break;
 	}
 	
-	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el(la) alumno(a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ' del ' . $grado_sub . ', con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 31/10/' . date('Y') . ', donde consta que se hizo acreedor (a) a las notas siguientes:';
+	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el (la) alumno (a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ((!empty($grado_sub)) ? ' del ' . $grado_sub . ', ' : '') . ' con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 29/10/' . date('Y') . ', donde consta que se hizo acreedor(a) a las notas siguientes:';
 	
 	/*
 	185 de margen derecho
-	65 margen izquierdo
+	65 margen izquierdothe
 	20 separacion de lineas de parrafo
 	*/
 	
-	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(150), 25);
+	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 140, 65, $pdf->top(150), 25, 'full', false, 40);
 	
 	$infot = array(
 		array(
@@ -170,7 +170,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		$j++;
 	}
 	
-	$pdf->multitable($infot, 65, $pdf->top(160), 5, 9, 1, array('last_height' => $pdf->top()));
+	$pdf->multitable($infot, 65, $pdf->top(180), 5, 9, 1, array('last_height' => $pdf->top()));
 	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
 	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
