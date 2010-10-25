@@ -78,22 +78,32 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 140, 65, $pdf->top(150), 25, 'full', false, 40);
 	
 	$infot = array(
-		array(
-			array('text' => 'No.', 'align' => 'center', 'width' => 30),
-			array('text' => 'Curso', 'align' => 'center'),
-			array('text' => 'Nota', 'align' => 'center', 'width' => 30),
-			array('text' => 'Nota en letras', 'align' => 'center'),
-			array('text' => 'Resultado', 'align' => 'center', 'width' => 75)
-		)
+		array(array('text' => 'No.', 'align' => 'center', 'width' => 30))
 	);
 	
+	switch ($arreglo['id_grado'])
+	{
+		case 1:
+		case 2:
+			$infot[0][] = array('text' => 'Areas', 'align' => 'center');
+			break;
+		case 3:
+			break;
+	}
+	
+	$infot[0][] = array('text' => 'Curso', 'align' => 'center');
+	$infot[0][] = array('text' => 'Nota', 'align' => 'center', 'width' => 30);
+	$infot[0][] = array('text' => 'Nota en letras', 'align' => 'center');
+	$infot[0][] = array('text' => 'Resultado', 'align' => 'center', 'width' => 75);
+	
 	$sql = "SELECT *
-		FROM cursos c, reinscripcion r
+		FROM cursos c, areas_cursos ac, reinscripcion r
 		WHERE r.id_grado = " . $secciones['id_grado'] . '
 			AND r.id_seccion = ' . $secciones['id_seccion'] . '
 			AND r.anio = ' . date('Y') . '
 			AND r.id_grado = c.id_grado
-			AND r.id_alumno = ' . (int) $arreglo['id_alumno'];
+			AND r.id_alumno = ' . (int) $arreglo['id_alumno'] . '
+			AND c.id_area = ac.id_area';
 	$ejecutar2 = mysql_query($sql);
 	
 	$j = 1;
@@ -162,12 +172,23 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		}
 		
 		$infot[$j] = array(
-			array('text' => $j, 'align' => 'center', 'width' => 25),
-			array('text' => $arreglo2['nombre_curso'] . '[br]', 'align' => 'left'),
-			array('text' => $per_sum, 'align' => 'center', 'width' => 30),
-			array('text' => $lets, 'align' => 'left'),
-			array('text' => $resultado, 'align' => 'center', 'width' => 75)
+			array('text' => $j, 'align' => 'center', 'width' => 25)
 		);
+		
+		switch ($arreglo['id_grado'])
+		{
+			case 1:
+			case 2:
+				$infot[$j][] = array('text' => $arreglo2['nombre_area'], 'align' => 'center');
+				break;
+			case 3:
+				break;
+		}
+		
+		$infot[$j][] = array('text' => $arreglo2['nombre_curso'], 'align' => 'left');
+		$infot[$j][] = array('text' => $per_sum, 'align' => 'center', 'width' => 30);
+		$infot[$j][] = array('text' => $lets, 'align' => 'left');
+		$infot[$j][] = array('text' => $resultado, 'align' => 'center', 'width' => 75);
 		
 		$j++;
 	}
