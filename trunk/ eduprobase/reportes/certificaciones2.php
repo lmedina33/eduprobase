@@ -77,6 +77,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	
 	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 140, 65, $pdf->top(150), 25, 'full', false, 40);
 	
+	$_areas = array();
 	$infot = array(
 		array(array('text' => 'No.', 'align' => 'center', 'width' => 30))
 	);
@@ -85,7 +86,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	{
 		case 1:
 		case 2:
-			$infot[0][] = array('text' => 'Areas', 'align' => 'center');
+			$infot[0][] = array('text' => 'Areas', 'align' => 'center', 'width' => 100);
 			break;
 		case 3:
 			break;
@@ -172,28 +173,38 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		}
 		
 		$infot[$j] = array(
-			array('text' => $j, 'align' => 'center', 'width' => 25)
+			array('text' => $j, 'align' => 'center')
 		);
 		
 		switch ($arreglo['id_grado'])
 		{
 			case 1:
 			case 2:
-				$infot[$j][] = array('text' => $arreglo2['nombre_area'], 'align' => 'center');
+				$_merge = false;
+				if (in_array($arreglo2['nombre_area'], $_areas))
+				{
+					$arreglo2['nombre_area'] = '';
+					$_merge = true;
+				}
+				
+				$_areas[] = $arreglo2['nombre_area'];
+				$infot[$j][] = array('text' => $arreglo2['nombre_area'], 'align' => 'center', 'merge' => $_merge);
 				break;
 			case 3:
 				break;
 		}
 		
-		$infot[$j][] = array('text' => $arreglo2['nombre_curso'], 'align' => 'left');
-		$infot[$j][] = array('text' => $per_sum, 'align' => 'center', 'width' => 30);
+		$infot[$j][] = array('text' => $arreglo2['nombre_curso'] . '[br]', 'align' => 'left');
+		$infot[$j][] = array('text' => $per_sum, 'align' => 'center');
 		$infot[$j][] = array('text' => $lets, 'align' => 'left');
-		$infot[$j][] = array('text' => $resultado, 'align' => 'center', 'width' => 75);
+		$infot[$j][] = array('text' => $resultado, 'align' => 'center');
 		
 		$j++;
 	}
 	
 	$pdf->multitable($infot, 65, $pdf->top(180), 5, 9, 1, array('last_height' => $pdf->top()));
+	
+	die();
 	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
 	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
