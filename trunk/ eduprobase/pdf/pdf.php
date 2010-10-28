@@ -410,6 +410,10 @@ class _pdf
 		$all_width = 0;
 		$all_height = 0;
 		
+		echo '<pre>';
+		print_r($table);
+		echo '</pre>';
+		
 		foreach ($table as $i => $tr)
 		{
 			foreach ($tr as $j => $td)
@@ -456,6 +460,10 @@ class _pdf
 		}
 		
 		$this->top($top, true);
+		
+		echo '<pre>--------------------------<br />';
+		print_r($table);
+		echo '</pre>';
 		
 		foreach ($table as $i => $tr)
 		{
@@ -534,11 +542,11 @@ class _pdf
 				$pos_left += $widths[$j];
 			}
 			
-			echo '<pre>a';
+			/*echo '<pre>a';
 			print_r($tr);
 			print_r($td);
 			echo 'z</pre>';
-			
+			*/
 			if ($border)
 			{
 				$max_top += $pos_top;
@@ -568,6 +576,8 @@ class _pdf
 				}
 			}
 		}
+		
+		die();
 		
 		return $this->top();
 	}
