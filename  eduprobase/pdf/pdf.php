@@ -410,10 +410,6 @@ class _pdf
 		$all_width = 0;
 		$all_height = 0;
 		
-		echo '<pre>';
-		print_r($table);
-		echo '</pre>';
-		
 		foreach ($table as $i => $tr)
 		{
 			foreach ($tr as $j => $td)
@@ -461,10 +457,6 @@ class _pdf
 		
 		$this->top($top, true);
 		
-		echo '<pre>--------------------------<br />';
-		print_r($table);
-		echo '</pre>';
-		
 		foreach ($table as $i => $tr)
 		{
 			$pos_left = $pos_left_orig = $left;
@@ -483,6 +475,11 @@ class _pdf
 			
 			foreach ($tr as $j => $td)
 			{
+				if (!isset($td['merge']))
+				{
+					$td['merge'] = false;
+				}
+				
 				if ($border)
 				{
 					$borders[$j]['left'] = $pos_left;
@@ -542,26 +539,9 @@ class _pdf
 				$pos_left += $widths[$j];
 			}
 			
-			/*echo '<pre>a';
-			print_r($tr);
-			print_r($td);
-			echo 'z</pre>';
-			*/
 			if ($border)
 			{
 				$max_top += $pos_top;
-				
-				$border_bottom = true;
-				if (empty($td['text']) && $td['merge'])
-				{
-					$border_bottom = false;
-				}
-					
-				// Bottom
-				if ($border_bottom)
-				{
-					$this->cp->line($pos_left_orig, $this->cp->cy($max_top), $pos_left, $this->cp->cy($max_top));
-				}
 				
 				foreach ($borders as $j => $border)
 				{
@@ -577,7 +557,10 @@ class _pdf
 			}
 		}
 		
-		die();
+		if ($border)
+		{
+			$this->cp->line($pos_left_orig, $this->cp->cy($max_top), $pos_left, $this->cp->cy($max_top));
+		}
 		
 		return $this->top();
 	}

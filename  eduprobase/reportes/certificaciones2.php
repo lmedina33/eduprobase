@@ -204,8 +204,6 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	
 	$pdf->multitable($infot, 65, $pdf->top(180), 5, 9, 1, array('last_height' => $pdf->top()));
 	
-	die();
-	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
 	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
 	
