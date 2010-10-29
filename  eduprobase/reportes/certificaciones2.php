@@ -138,22 +138,6 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			$per_curse += $total;
 			
 			if ($total) $per_curse_f++;
-			
-			/*if ($total)
-			{
-				if (!isset($note_sum[$row['id_examen']]))
-				{
-					$note_sum[$row['id_examen']] = 0;
-				}
-				
-				if (!isset($note_quant[$row['id_examen']]))
-				{
-					$note_quant[$row['id_examen']] = 0;
-				}
-				
-				$note_sum[$row['id_examen']] += $total;
-				$note_quant[$row['id_examen']]++;
-			}*/
 		}
 		
 		if (!$per_curse_f) $per_curse_f = 1;
