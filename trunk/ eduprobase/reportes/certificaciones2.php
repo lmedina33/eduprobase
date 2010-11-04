@@ -53,7 +53,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		case 1:
 		case 2:
 		case 3:
-			$grado_sub = ' B&aacute;sico con Orientaci&oacute;n Comercial';
+			$grado_sub = ' del Ciclo de Educaci&oacute;n B&aacute;sica';
 			 break;
 		case 4:
 		case 5:
@@ -67,7 +67,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			break;
 	}
 	
-	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el (la) alumno (a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ((!empty($grado_sub)) ? '' . $grado_sub . ', ' : '') . 'con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 29/10/' . date('Y') . ', donde consta que se hizo acreedor(a) a las notas siguientes:';
+	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n  No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el (la) alumno (a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ((!empty($grado_sub)) ? '' . $grado_sub . ', ' : '') . 'con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 29/10/' . date('Y') . ', donde consta que se hizo acreedor(a) a las notas siguientes:';
 	
 	/*
 	185 de margen derecho
