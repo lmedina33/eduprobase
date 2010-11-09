@@ -75,7 +75,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	20 separacion de lineas de parrafo
 	*/
 	
-	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 140, 65, $pdf->top(150), 25, 'full', false, 40);
+	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 100, 65, $pdf->top(150), 25, 'full', false, 50);
 	
 	$_areas = array();
 	$infot = array(
