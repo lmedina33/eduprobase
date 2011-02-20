@@ -47,6 +47,8 @@ if ($alumno)
 	}
 }
 
+$ejecutar = mysql_query($seleccionar);
+
 $i = 0;
 while ($arreglo = mysql_fetch_assoc($ejecutar))
 {
@@ -115,7 +117,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		FROM cursos c, areas_cursos ac, reinscripcion r
 		WHERE r.id_grado = " . $secciones['id_grado'] . '
 			AND r.id_seccion = ' . $secciones['id_seccion'] . '
-			AND r.anio = ' . date('Y') . '
+			AND r.anio = ' . $anio . '
 			AND r.id_grado = c.id_grado
 			AND r.id_alumno = ' . (int) $arreglo['id_alumno'] . '
 			AND c.id_area = ac.id_area';

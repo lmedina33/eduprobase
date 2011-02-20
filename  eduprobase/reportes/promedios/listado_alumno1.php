@@ -96,7 +96,7 @@ require_once('../../conexion.php');
 						AND c.id_curso = n.id_curso
 					GROUP BY a.id_alumno
 					ORDER BY promedio DESC";
-				$ejecutar = mysql_query($seleccionar) or die(mysql_error());
+				$ejecutar = mysql_query($seleccionar);
 				
 				$j = 0;
 				$i = 0;
