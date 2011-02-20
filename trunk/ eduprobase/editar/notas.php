@@ -113,7 +113,7 @@ encabezado('Ingreso de Calificaciones');
 			</tr>
 			<?php
 			
-			$anio = date('Y');
+			$anio = $_POST['anio'];
 			
 			$sql = 'SELECT * FROM alumno a, grado g, reinscripcion r
 				WHERE r.id_grado = g.id_grado
@@ -127,6 +127,13 @@ encabezado('Ingreso de Calificaciones');
 			while($arreglo = mysql_fetch_array($ejecutar))
 			{
 			
+			?>
+					
+			<tr>
+				<td width="139"><?php echo $arreglo['carne']; ?></td>
+				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
+				<td width="168"><?php
+				
 				$sql = 'SELECT *
 					FROM notas
 					WHERE id_alumno = ' . (int) $arreglo['id_alumno'] . '
@@ -135,12 +142,6 @@ encabezado('Ingreso de Calificaciones');
 						AND id_bimestre = ' . (int) $examen;
 				$ejecutar_notas = mysql_query($sql);
 				$cada_nota = mysql_fetch_array($ejecutar_notas);
-			?>
-					
-			<tr>
-				<td width="139"><?php echo $arreglo['carne']; ?></td>
-				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
-				<td width="168"><?php
 				
 				echo '<input name="nota[' . $arreglo['id_alumno'] . ']" value="' . (($cada_nota['nota']) ? $cada_nota['nota'] : '') . '" type="text" size="5" /> puntos';
 				
