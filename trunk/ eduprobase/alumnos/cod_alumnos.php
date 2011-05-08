@@ -36,7 +36,7 @@ $carne = $fech . $sexo;
 
 $insertar = "INSERT INTO alumno(carne, codigo_alumno, nombre_alumno, apellido, direccion, orden, registro, fecha, telefono1, edad, sexo, email, padre, madre, encargado, profesion, labora, direccion_labora, dpi, extendida, emergencia, telefono2, status, id_grado)
 	VALUES ('$carne' , '$codigo' , '$nombre' , '$apellido' , '$direccion' , '$orden' , '$registro' , NOW() , '$telefono1' , '$edad' , '$sexo' , '$email' , '$padre' , '$madre' , '$encargado' , '$profesion' , '$laborando' , '$direccion_labora', '$dpi' , '$extendido' , '$emergencia' , '$telefono2' , 'status' , '$grado')";
-$ejecutar = mysql_query($insertar); //ejecuta el query de la tabla ALUMNOS
+$ejecutar = mysql_query($insertar);
 
 //extrae el id
 $id = mysql_insert_id($conectar);
@@ -46,12 +46,13 @@ $carne .= $id;
 
 $insertar = "INSERT INTO reinscripcion(id_alumno, carne, id_grado, id_seccion, fecha_reinscripcion, encargado_reinscripcion, telefonos, status, anio)
 	VALUES ('$id','$carne','$grado','$seccion', NOW(),'$encargado','$telefono2','$status','$fech')";
-$ejecutar =mysql_query($insertar);
+$ejecutar = mysql_query($insertar);
 
-$modificar = "UPDATE alumno SET carne = '$carne' WHERE id_alumno = '$id'" ; //hace el insert del carnet Y MODIFICA LA TABLA
+//hace el insert del carnet Y MODIFICA LA TABLA
+$modificar = "UPDATE alumno SET carne = '$carne' WHERE id_alumno = '$id'";
 $ejecutar1 = mysql_query($modificar);
 
-if($ejecutar)
+if ($ejecutar)
 {
 	header('location: index2.php');
 }

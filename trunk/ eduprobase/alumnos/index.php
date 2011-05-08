@@ -227,10 +227,9 @@ function validar() {
 				<td><select id="grado" name="grado">
 					<?php
 					
-					$seleccionar = "SELECT * FROM grado";
+					$seleccionar = "SELECT * FROM grado WHERE id_grado = 1 AND status = 'Alta'";
 					$ejecutar = mysql_query($seleccionar);
 					
-					//echo '<option value="0">Seleccione </option>';
 					//por cada registro encontrado en la tabla me genera un <option>
 					while ($arreglo = mysql_fetch_array($ejecutar))
 					{
@@ -249,8 +248,6 @@ function validar() {
 						$seleccionar = "SELECT * FROM secciones WHERE id_grado = 1";
 						$ejecutar = mysql_query($seleccionar);
 						
-						//echo '<option value="0">Seleccione </option>';
-						//por cada registro encontrado en la tabla me genera un <option>
 						while ($arreglo = mysql_fetch_array($ejecutar))
 						{
 							echo '<option value="' . $arreglo['id_seccion'] . '" >' . $arreglo['nombre_seccion'] . '</option>';

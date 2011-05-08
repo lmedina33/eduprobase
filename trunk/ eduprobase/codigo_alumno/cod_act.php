@@ -4,9 +4,6 @@ require_once('../conexion.php');
 
 $textfield = $_POST['textfield'];
 
-//print_r($textfield);
-//exit;
-
 foreach ($textfield as $alumno => $codigo)
 {
 	if (!$codigo)

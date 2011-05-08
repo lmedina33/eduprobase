@@ -2,111 +2,94 @@
 
 require_once('../conexion.php');
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Ingreso de Codigos para Alumnos</title>
-<link rel="stylesheet" type="text/css" href="../style.css"  />
+encabezado('Ingreso de Catedr&aacute;ticos');
 
-<script src="../jquery.js" type="text/javascript"></script>
+?>
 
-</head>
-
-<body>
-<table width="840" border="0" align="center" bgcolor="#000000">
-  <tr>
-    <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
-      <tr>
-        <td valign="top">&nbsp;</td>
-        <td><img src="../images/fond1.jpg" width="830" height="150" /></td>
-      </tr>
-      <tr>
-        <td width="8" valign="top"><label><br />
-              <br />
-              <br />
-              <a href="../conexion.php"></a><br />
-        </label></td>
-        <td width="809"><div align="right">
-		<div id="content2">
-		<?php include('../menu.php'); ?>
-		<div class="title"> Ingreso de Codigos de Alumnos </div>
-		</div>
-		</div>
-            <table width="821" align="center">
-              <tr bgcolor="#F3F3F3">
-                <td bordercolor="#000000" bgcolor="#F3F3F3"><br />
-                  <table width="776" border="0">
-                    <tr>
-                      <td width="58">&nbsp;</td>
-                      <td width="669"><form id="form1" name="form1" method="get" action="codigos.php">
-                        <select id="grado" name="grado">
-												<?php
-                        
-                        $seleccionar = "SELECT * FROM grado WHERE id_grado = 1";
-                        $ejecutar = mysql_query($seleccionar);
-                        
-                        //echo '<option value="0">Seleccione </option>';
-                        //por cada registro encontrado en la tabla me genera un <option>
-                        while ($arreglo = mysql_fetch_array($ejecutar))
-                        {
-                        	echo '<option value="' . $arreglo['id_grado'] . '" >' . $arreglo['nombre'] . '</option>';
-                        }
-                        
-                        ?>
-						  </select>
-                          <select id="seccion" name="seccion">
-												<?php
-                        
-                        $seleccionar = "SELECT * FROM secciones WHERE id_grado = 1";
-                        $ejecutar = mysql_query($seleccionar);
-                        
-                        //echo '<option value="0">Seleccione </option>';
-                        //por cada registro encontrado en la tabla me genera un <option>
-                        while ($arreglo = mysql_fetch_array($ejecutar))
-                        {
-                        	echo '<option value="' . $arreglo['id_seccion'] . '" >' . $arreglo['nombre_seccion'] . '</option>';
-                        }
-                        
-                        ?>
-						  </select>
-                          <label>
-                                            <input type="submit" name="Submit" value="Ver Listado..." />
-                          </label>
-                      </form>                      </td>
-                      <td width="27">&nbsp;</td>
-                    </tr>
-                  </table>
-                <br />
-                    <br />
-                    <div align="center"></div></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-              </tr>
-            </table>
-          <table width="820">
-              <tr>
-                <td width="810"></td>
-              </tr>
-          </table></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-</body>
-</html>
-<script language="JavaScript" type="text/javascript">
-document.formulario.carne.focus();
-</script>
-
+<div id="content" class="float-holder">
+	<div id="content2">
+	    <?php include('../menu.php'); ?>
+		
+		<div class="title">Ingreso de c&oacute;digos de alumnos</div>
+	</div>
+	
+	<div class="blue">
+		<form id="form1" name="form1" method="post" action="codigos.php">
+		
+		<table width="731" border="0" align="center">
+			<tr>
+				<td>&nbsp;</td>
+				<td class="text1 a_right">Grado:</td>
+				<td><select id="grado" name="grado">
+				<?php
+				
+				$sql = "SELECT *
+					FROM grado
+					WHERE id_grado = 1
+						AND status = 'Alta'";
+				$ejecutar = mysql_query($sql);
+				
+				while ($arreglo = mysql_fetch_array($ejecutar))
+				{
+					echo '<option value="' . $arreglo['id_grado'] . '" >' . $arreglo['nombre'] . '</option>';
+				}
+				
+				?>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td class="text1 a_right">Secci&oacute;n:</td>
+				<td><select id="seccion" name="seccion">
+				<?php
+				
+				$sql = "SELECT *
+					FROM secciones
+					WHERE id_grado = 1";
+				$ejecutar = mysql_query($sql);
+				
+				while ($arreglo = mysql_fetch_array($ejecutar))
+				{
+					echo '<option value="' . $arreglo['id_seccion'] . '" >' . $arreglo['nombre_seccion'] . '</option>';
+				}
+				
+				?>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td class="text1 a_right">A&ntilde;o:</td>
+				<td><select name="anio" id="anio">
+				<?php
+				
+				for ($i_year = date('Y'); $i_year >= 2010; $i_year--)
+				{
+					echo '<option value="' . $i_year . '">' . $i_year . '</option>';
+				}
+				
+				?>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit" name="Submit" value="Ver Listado..." /></td>
+			</tr>
+		</table>
+		</form>
+	</div>
+	
+</div>
 
 <script language="JavaScript" type="text/javascript">
-
-function buscar(url) {  
-ventana = open(url,"ventana","scrollbars=yes,status=no,toolbar=no,directories=no,menubar=no,resizable=yes,width=350,height=425")  
-}  
-
+//<![CDATA[
 $(function() {
 	$('#grado').change(function() {
 		$.ajax({
@@ -119,6 +102,8 @@ $(function() {
  });
 	});
 });
-
-
+//]]>
 </script>
+
+</body>
+</html>

@@ -144,9 +144,9 @@ function MM_validateForm() { //v4.0
                   <td bgcolor="#4682B4"><table width="808" border="0">
                       <tr>
                         <td width="94" class="Estilo6"><div align="center">A&ntilde;o</div></td>
-                        <td width="342"><div align="center" class="Estilo6">Grado</div></td>
+                        <td width="250"><div align="center" class="Estilo6">Grado</div></td>
                         <td width="248"><div align="center" class="Estilo6">Encargado</div></td>
-                        <td width="106"><div align="center" class="Estilo6">Informaci&oacute;n</div></td>
+                        <td width="150"><div align="center" class="Estilo6">Informaci&oacute;n</div></td>
                       </tr>
                   </table></td>
                 </tr>
@@ -170,14 +170,14 @@ function MM_validateForm() { //v4.0
                       <br />
                       <table width="808" border="0">
                         <tr>
-                          <td width="94" class="Estilo6"><div align="center" class="text2"><?php echo $arreglo['anio']; ?></div></td>
-                          <td width="342"><div align="center" class="Estilo6">
+                          <td width="82" class="Estilo6"><div align="center" class="text2"><?php echo $arreglo['anio']; ?></div></td>
+                        <td width="294"><div align="center" class="Estilo6">
                               <div align="left"><span class="tex2"><?php echo $arreglo['nombre'] . ', secci&oacute;n: ' . $arreglo['nombre_seccion']; ?>
                               </span></div>
                           </div></td>
-                          <td width="252" align="left" class="text2"><div align="left"><?php echo $arreglo['encargado_reinscripcion']; ?></div></td>
-                          <td width="102" class="text2"><div align="center"><a href="../reportes/grado.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado']; ?> " target="_blank"><img src="../images/iconos/133.ico" border="0" /></a></div></td>
-                          <td width="102" class="text2">
+                          <td width="255" align="left" class="text2"><div align="left"><?php echo $arreglo['encargado_reinscripcion']; ?></div></td>
+                          <td width="50" class="text2"><div align="center"><a href="../reportes/grado.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado']; ?> " target="_blank"><img src="../images/iconos/133.ico" border="0" /></a></div></td>
+                        <td width="100" class="text2">
 	                          <form action="../reportes/certificaciones.php" method="post">
 	                          <input type="hidden" name="alumno" value="<?php echo $arreglo['id_alumno']; ?>" />
 	                          <input type="hidden" name="anio" value="<?php echo $arreglo['anio']; ?>" />

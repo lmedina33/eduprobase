@@ -96,6 +96,13 @@ encabezado('Ingreso de Calificaciones');
 					<input name="examen" type="hidden" id="examen" value="<?php echo $arreglo['id_examen']; ?>" />
 				</td>
 			</tr>
+            <tr>
+            <td>           </td>
+           <td align="right" class="text1"> A&ntilde;o           </td>
+           <td class="text1 Estilo6"><?php
+            $anio = $_POST['anio'];
+            echo $anio;?></td>
+            </tr>
 		</table>
 		
 		<br />
@@ -127,6 +134,14 @@ encabezado('Ingreso de Calificaciones');
 			
 			while($arreglo = mysql_fetch_array($ejecutar))
 			{
+			
+			?>
+					
+			<tr>
+				<td width="139"><?php echo $arreglo['carne']; ?></td>
+				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
+				<td width="168"><?php
+				
 				$sql = 'SELECT *
 					FROM notas
 					WHERE id_alumno = ' . (int) $arreglo['id_alumno'] . '

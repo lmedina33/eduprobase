@@ -15,7 +15,7 @@ $seleccionar = mysql_select_db($db) or die ('No se pudo seleccionar la base de d
 
 session_start();
 
-function encabezado($titulo = '', $ruta = '')
+function encabezado($titulo = '', $ruta = '', $full = true)
 {
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,10 +29,17 @@ function encabezado($titulo = '', $ruta = '')
 
 <body>
 
+<?php
+
+if ($full)
+{
+	?>
 <div id="header">
 	<img src="../<?php echo $ruta; ?>images/fond1.jpg" width="830" height="150" alt="" />
 </div>
-<?php
+	<?php
+}
+
 }
 
 ?>
