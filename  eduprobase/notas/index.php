@@ -25,7 +25,7 @@ encabezado('Ingreso de Notas');
 					
 					$seleccionar = "SELECT *
 						FROM grado g, secciones s
-						WHERE g.id_grado = s.id_grado";
+						WHERE g.id_grado = s.id_grado AND status = 'Alta'";
 					$ejecutar = mysql_query($seleccionar);
 					
 					echo '<select name="grado" id="grado">';
@@ -42,9 +42,7 @@ encabezado('Ingreso de Notas');
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td colspan="3">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -72,9 +70,7 @@ encabezado('Ingreso de Notas');
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td colspan="3">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -99,9 +95,7 @@ encabezado('Ingreso de Notas');
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td colspan="3">&nbsp;</td>
 			</tr>
 			<tr>
 				<td>&nbsp;</td>
@@ -124,25 +118,19 @@ encabezado('Ingreso de Notas');
 					?>
 				</td>
 			</tr>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center"><input type="submit" name="Submit2" value="Ir..." /></td>
+			</tr>
 		</table>
-		
-		<br />
-		<div class="a_center">
-			<input type="submit" name="Submit2" value="Ir..." />
-		</div>
-		<br />
-		
 		</form>
 	</div>
 </div>
 
 <script type="text/javascript">
 //<![CDATA[
-
-function alerta() {
-	return window.confirm("Seguro que desea Realizar la Accion?");
-}
-
 $(function() {
 	$('#grado').change(function() {
 		$.ajax({
@@ -155,7 +143,6 @@ $(function() {
  });
 	});
 });
-
 //]]>
 </script>
 

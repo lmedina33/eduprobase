@@ -6,7 +6,7 @@ require_once('../conexion.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Asignación de Areas Ocupacionales </title>
+<title>Asignaciï¿½n de Areas Ocupacionales </title>
 <link rel="stylesheet" type="text/css" href="../style.css"  />
 
 <script src="../jquery.js" type="text/javascript"></script>
@@ -30,7 +30,7 @@ require_once('../conexion.php');
         <td width="809"><div align="right">
 		<div id="content2">
 		<?php include('../menu.php'); ?>
-		<div class="title"> Asignación de Areas Ocupacionales </div>
+		<div class="title"> Asignaciï¿½n de Areas Ocupacionales </div>
 		</div>
 		</div>
             <table width="821" align="center">
@@ -43,7 +43,7 @@ require_once('../conexion.php');
                         <select id="grado" name="grado">
 												<?php
                         
-                        $seleccionar = "SELECT * FROM grado";
+                        $seleccionar = "SELECT * FROM grado WHERE status = 'Alta'";
                         $ejecutar = mysql_query($seleccionar);
                         
                         //echo '<option value="0">Seleccione </option>';

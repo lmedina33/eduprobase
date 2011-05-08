@@ -169,19 +169,33 @@ function MM_validateForm() { //v4.0
                               <td><select id="grado" name="grado">
 					<?php
 					
+					$sql = "SELECT id_grado
+						FROM reinscripcion
+						WHERE carne = '" . $carne . "'
+						ORDER BY id_grado DESC
+						LIMIT 1";
+					$u_grado = mysql_query($sql);
+					
+					$last_grade = 0;
+					if ($u_result = mysql_fetch_array($u_grado))
+					{
+						$last_grade = $u_result['id_grado'];
+					}
+					
 					$seleccionar = "SELECT *
 						FROM grado
-						WHERE id_grado NOT IN (
-							SELECT id_grado
-							FROM reinscripcion
-							WHERE carne = '$carne'
-						)";
+						WHERE status = 'Alta' 
+						AND id_grado > " . $last_grade;
 					$ejecutar = mysql_query($seleccionar);
 					
-					//echo '<option value="0">Seleccione </option>';
-					//por cada registro encontrado en la tabla me genera un <option>
+					$primer_seccion = 0;
 					while ($arreglo = mysql_fetch_array($ejecutar))
 					{
+						if (!$primer_seccion)
+						{
+							$primer_seccion = $arreglo['id_grado'];
+						}
+						
 						echo '<option value="' . $arreglo['id_grado'] . '" >' . $arreglo['nombre'] . '</option>';
 					}
 					
@@ -194,7 +208,7 @@ function MM_validateForm() { //v4.0
                               <td><select id="seccion" name="seccion">
 						<?php
 						
-						$seleccionar = "SELECT * FROM secciones WHERE id_grado = 1";
+						$seleccionar = "SELECT * FROM secciones WHERE id_grado = " . $primer_seccion;
 						$ejecutar = mysql_query($seleccionar);
 						
 						//echo '<option value="0">Seleccione </option>';

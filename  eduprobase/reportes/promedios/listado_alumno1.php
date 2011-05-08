@@ -32,6 +32,7 @@ require_once('../../conexion.php');
 				$grado = $_REQUEST['grado'];
 				$seccion = $_REQUEST['seccion'];
 				$bimestre = $_REQUEST['examen'];
+				$anio = $_REQUEST['anio'];
 				
 				$seleccionar = "SELECT *
 					FROM grado g, secciones s
@@ -77,8 +78,6 @@ require_once('../../conexion.php');
               <tr>
                 <td width="810">
 				<?php 
-				
-				$anio = date("Y");
 				
 				$seleccionar = "SELECT *, AVG(n.nota) AS promedio, AVG(n.nota2) AS promedio2
 					FROM alumno a, grado g, reinscripcion r, notas n, cursos c

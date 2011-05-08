@@ -11,19 +11,19 @@ $direccion = $_POST['direccion'];
 $observacion = $_POST['observacion'];
 
 $registro = "cmemou";
-$status ="Alta";
+$status = "Alta";
 
-$insertar = "INSERT INTO catedratico(registro, nombre_catedratico, apellido, profesion, email, telefono, direccion, observacion, status)
+$insertar = "INSERT INTO catedratico (registro, nombre_catedratico, apellido, profesion, email, telefono, direccion, observacion, status)
 	VALUES ('$registro','$nombre','$apellido','$profesion','$email','$telefonos','$direccion','$observacion','$status')";
 $ejecutar = mysql_query($insertar);
 
-if($ejecutar)
+if ($ejecutar)
 {
 	header ("location: index.php");
 }
 else
 {
-	echo "No se pudo ingresar el Registro por que: ".mysql_error();
+	echo "No se pudo ingresar el registro porque " . mysql_error();
 }
 
 ?>
