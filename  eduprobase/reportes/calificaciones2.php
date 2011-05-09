@@ -127,7 +127,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 			$sql = 'SELECT *
 				FROM notas
 				WHERE id_alumno = ' . $arreglo['id_alumno'] . '
-					AND id_grado = ' . $arreglo['id_grado'] . '
+					AND id_grado = ' . $secciones['id_grado'] . '
 					AND id_curso = ' . $arreglo2['id_curso'] . '
 					AND id_bimestre = ' . $row['id_examen'];
 			$ejecutar4 = mysql_query($sql);
@@ -157,7 +157,6 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 				$note_quant[$row['id_examen']]++;
 			}
 		}
-		
 		
 		$j++;
 	}
