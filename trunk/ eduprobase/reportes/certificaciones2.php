@@ -69,6 +69,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		case 1:
 		case 2:
 		case 3:
+		case 10:
 			$grado_sub = ' del Ciclo de Educaci&oacute;n B&aacute;sica';
 			 break;
 		case 4:
@@ -102,6 +103,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	{
 		case 1:
 		case 2:
+		case 10:
 			$infot[0][] = array('text' => 'Areas', 'align' => 'center', 'width' => 100);
 			break;
 		case 3:
@@ -180,6 +182,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		{
 			case 1:
 			case 2:
+			case 10:
 				$_merge = false;
 				if (in_array($arreglo2['nombre_area'], $_areas))
 				{

@@ -123,7 +123,8 @@ encabezado('Ingreso de Calificaciones');
 			
 			$anio = (int) $_POST['anio'];
 			
-			$sql = 'SELECT * FROM alumno a, grado g, reinscripcion r
+			$sql = 'SELECT *
+				FROM alumno a, grado g, reinscripcion r
 				WHERE r.id_grado = g.id_grado
 					AND r.id_alumno = a.id_alumno
 					AND g.id_grado = ' . (int) $grado . '
@@ -155,13 +156,6 @@ encabezado('Ingreso de Calificaciones');
 				{
 					$is_nota = true;
 				}
-			
-			?>
-					
-			<tr>
-				<td width="139"><?php echo $arreglo['carne']; ?></td>
-				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
-				<td width="168" align="center"><?php
 				
 				if ($is_nota)
 				{
