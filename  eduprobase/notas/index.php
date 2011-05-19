@@ -56,9 +56,7 @@ encabezado('Ingreso de Notas');
 					$ejecutar = mysql_query($seleccionar);
 					
 					echo '<select name="curso" id="curso">';
-					//echo '<option value="0">Seleccione</option>';
 					
-					//por cada registro encontrado en la tabla me genera un <option>
 					while ($arreglo = mysql_fetch_array($ejecutar))
 					{
 						echo '<option value="' . $arreglo['id_curso'] . '" >' . $arreglo['nombre_curso'] . '</option>';

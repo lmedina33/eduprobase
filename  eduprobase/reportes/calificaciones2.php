@@ -29,7 +29,7 @@ $seleccionar = 'SELECT * FROM reinscripcion r, secciones s, grado g, alumno a
 		AND r.id_seccion = s.id_seccion
 		AND r.id_alumno = a.id_alumno
 		AND r.id_grado = g.id_grado';
-$ejecutar = mysql_query($seleccionar); // || die (mysql_error());
+$ejecutar = mysql_query($seleccionar);
 
 $i = 0;
 while ($arreglo = mysql_fetch_assoc($ejecutar))
@@ -39,10 +39,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	$pdf->cp->addJpegFromFile('../images/logo.jpg', 40, $pdf->cp->cy(100), 60); 
 	
 	$pdf->text(100, $pdf->top(25), 'COLEGIO MIXTO DE EDUCACION MEDIA CON ORIENTACION UNIVERSITARIA', 8, 'center', $pdf->page_width(125));
-	//$pdf->text(100, $pdf->top(11), 'ESCUELA NORMAL RURAL No. 5', 8, 'center', $pdf->page_width(125));
-	//$pdf->text(100, $pdf->top(11), '&quot;Prof. Julio Edmundo Rosado Pinelo&quot;', 8, 'center', $pdf->page_width(125));
 	$pdf->text(100, $pdf->top(11), 'Santa Elena, Flores, Pet&eacute;n. Tel. 79262349', 8, 'center', $pdf->page_width(125));
-	//$pdf->text(100, $pdf->top(11), '&quot;SIMIENTE DE CULTURA EN PET&Eacute;N&quot;', 8, 'center', $pdf->page_width(125));
 	$pdf->text(100, $pdf->top(20), 'FICHA DE RENDIMIENTO ESCOLAR', 11, 'center', $pdf->page_width(125));
 	
 	$datos = array(
@@ -111,6 +108,7 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	$note_sum = array();
 	$note_quant = array();
 	$j = 1;
+// 	
 	while($arreglo2 = mysql_fetch_assoc($ejecutar2))
 	{
 		$infot[$j] = array(array('text' => $arreglo2['nombre_curso'], 'align' => 'left'));
