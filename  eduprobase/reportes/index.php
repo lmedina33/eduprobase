@@ -1,25 +1,10 @@
 <?php
-
 require_once('../conexion.php');
-
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Modulo de Mantenimiento</title>
-<link rel="stylesheet" type="text/css" href="../style.css"  />
-
-</head>
-
-<body>
-<div id="header">
-	<img src="../images/fond1.jpg" width="830" height="150" alt="" />
-</div>
-
+?>
 <div id="content" class="float-holder">
 <div id="content2">
     <?php include('../menu.php'); ?>
-	
+	<?php encabezado('Reportes Generales'); ?>	
 	<div class="title">Reportes del Sistema</div>
 </div>
 	

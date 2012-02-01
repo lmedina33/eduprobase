@@ -18,16 +18,11 @@ if (!isset($_SESSION['userlog']))
 
 </head>
 
-<body onload="mueveReloj()">
+<body>
 
 <div id="content">
 <div id="content2">
-	<!--
-	<form name="form_reloj" id="form_reloj">
-		<input type="text" name="reloj" size="10" style="background-color:#C4F0F2;  color:#990000; font-family:Tahoma; font-size : 20px; text-align : center;" onfocus="window.document.form_reloj.reloj.blur()" />
-	</form>
-	-->
-	
+		
 	<?php
 	
 	$toproot = './';

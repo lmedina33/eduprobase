@@ -1,8 +1,5 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Catedr&aacute;ticos');
 
 $grado = $_REQUEST['grado'];
 $seccion = $_REQUEST['seccion'];
@@ -13,7 +10,7 @@ $anio = $_REQUEST['anio'];
 <div id="content" class="float-holder">
 	<div id="content2">
 	    <?php include('../menu.php'); ?>
-		
+		<? encabezado('Ingreso de Catedr&aacute;ticos'); ?>
 		<div class="title">Ingreso de c&oacute;digo de alumno</div>
 	</div>
 	

@@ -5,7 +5,7 @@ $contrasena ='anjorame1984';
 $db = 'school';
 */
 $usuario = 'root';
-$contrasena ='8i8o11ag';
+$contrasena ='anjorame';
 $db = 'eduprobase';
 
 $servidor = 'localhost';
@@ -35,7 +35,7 @@ if ($full)
 {
 	?>
 <div id="header">
-	<img src="../<?php echo $ruta; ?>images/fond1.jpg" width="830" height="150" alt="" />
+	<img src="../<?php echo $ruta; ?>images/banner.jpg" width="850" height="160" alt="" />
 </div>
 	<?php
 }

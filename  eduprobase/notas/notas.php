@@ -1,15 +1,11 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Calificaciones');
-
 ?>
 
 <div id="content" class="float-holder">
 	<div id="content2">
 	    <?php include('../menu.php'); ?>
-		
+		<?php encabezado('Ingreso de Calificaciones'); ?>		
 		<div class="title">Ingreso de Notas</div>
 	</div>
 	
