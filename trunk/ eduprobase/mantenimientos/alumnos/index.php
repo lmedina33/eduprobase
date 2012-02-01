@@ -3,18 +3,15 @@
 $toproot = '../../';
 require_once('../../conexion.php');
 
-encabezado('Mantenimiento de Alumnos', '../');
-
 ?>
 
 <div id="content" class="float-holder">
 	<div id="content2">
 		<?php include('../../menu.php'); ?>
-		
+		<? encabezado('Mantenimiento de Alumnos', '../'); ?>
 		<div class="title">Mantenimiento de alumnos</div>
 	</div>
 	
-	<div class="blue">
 		<form action="alumno.php" method="get" name="formulario" id="formulario" onsubmit="MM_validateForm('carne','','R');return document.MM_returnValue">
 		<table width="520" border="0" align="center">
 			<tr>
@@ -54,8 +51,6 @@ encabezado('Mantenimiento de Alumnos', '../');
                         </table>
 				
         </form>
-
-	</div>
 </div>
 
 <script type="text/javascript">

@@ -13,8 +13,6 @@ if(!$arreglo = mysql_fetch_assoc($ejecutar))
 	header('location: index.php');
 }
 
-encabezado('Datos: Calificaciones, Datos Alumno', '../');
-
 $sql = 'SELECT *
 	FROM reinscripcion
 	WHERE id_alumno = ' . (int) $arreglo['id_alumno'] . '
@@ -28,11 +26,9 @@ $reins = mysql_fetch_array($ejecutar2);
 <div id="content" class="float-holder">
 	<div id="content2">
 		<?php include('../../menu.php'); ?>
-		
-		<div class="title">Historial del alumno</div>
+		<? encabezado('Datos: Calificaciones, Datos Alumno', '../'); ?>
+		<div class="title">Historial del alumno</div><? var_dump($arreglo); ?>	
 	</div>
-	
-	<div class="blue">
 
 	<form action="../cod_mant/cod_man_alumno.php" method="post" name="formulario" id="formulario" onsubmit="return validar()">
 	
@@ -172,7 +168,7 @@ $reins = mysql_fetch_array($ejecutar2);
 	
     </form>
 		
-		</div>
+	
 		</div>
 		
 <script language="JavaScript" type="text/javascript">

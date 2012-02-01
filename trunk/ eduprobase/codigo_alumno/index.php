@@ -1,15 +1,11 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Catedr&aacute;ticos');
-
 ?>
 
 <div id="content" class="float-holder">
 	<div id="content2">
 	    <?php include('../menu.php'); ?>
-		
+		<? encabezado('Ingreso de Catedr&aacute;ticos'); ?>
 		<div class="title">Ingreso de c&oacute;digos de alumnos</div>
 	</div>
 	
@@ -25,8 +21,7 @@ encabezado('Ingreso de Catedr&aacute;ticos');
 				
 				$sql = "SELECT *
 					FROM grado
-					WHERE id_grado = 1
-						AND status = 'Alta'";
+					WHERE status = 'Alta'";
 				$ejecutar = mysql_query($sql);
 				
 				while ($arreglo = mysql_fetch_array($ejecutar))
@@ -47,8 +42,7 @@ encabezado('Ingreso de Catedr&aacute;ticos');
 				<?php
 				
 				$sql = "SELECT *
-					FROM secciones
-					WHERE id_grado = 1";
+					FROM secciones";
 				$ejecutar = mysql_query($sql);
 				
 				while ($arreglo = mysql_fetch_array($ejecutar))

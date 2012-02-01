@@ -12,68 +12,17 @@ if (!$arreglo = mysql_fetch_assoc($ejecutar))
 	header('location: index.php');
 }
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Datos: Calificaciones, Datos Alumno</title>
-<link rel="stylesheet" type="text/css" href="../style.css" />
-
-
-<script type="text/JavaScript">
-<!--
-function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
-
-function MM_validateForm() { //v4.0
-  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
-  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
-    if (val) { nm=val.name; if ((val=val.value)!="") {
-      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
-        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
-      } else if (test!='R') { num = parseFloat(val);
-        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
-        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
-          min=test.substring(8,p); max=test.substring(p+1);
-          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
-    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
-  } if (errors) alert('The following error(s) occurred:\n'+errors);
-  document.MM_returnValue = (errors == '');
-}
-//-->
-</script>
-</head>
-
-<body>
-
-    <td width="833">
-      <table width="833" border="0" align="center" bgcolor="#FFFFFF">
-        <tr>
-          <td valign="top">&nbsp;</td>
-          <td><img src="../images/fond1.jpg" width="830" height="150" /></td>
-        </tr>
-        <tr>
-          <td width="8" valign="top"><label><br />
-                <br />
-                <br />
-                <a href="../conexion.php"></a><br />
-          </label></td>
-          <td width="809"><div align="right">
-          
-          <form action="../reinscripcion/cod_reinscripcion.php" method="post" name="formulario" id="formulario" onsubmit="MM_validateForm('encargado','','R','telefonos','','R');return document.MM_returnValue">
-		  <div class="content2"> 
-		  <?php include('../menu.php'); ?>
-		  <div class="title"> Historial General del Alumno </div>
-		  </div>	  
-		  </div>
-              <table width="821" align="center">
-                  <tr bgcolor="#F3F3F3">
-                  <td bordercolor="#000000" bgcolor="#E0EBF3"><table width="583" border="0" align="center">
+?>
+	<div id="content" class="float-holder">
+	<div id="content2">
+		<? include('../menu.php');?>
+		<? encabezado('Historial del Alumno');?>
+		<div class="title">Ver Historial Completo del Alumno</div>
+      
+		  <form action="../reinscripcion/cod_reinscripcion.php" method="post" name="formulario" id="formulario" onsubmit="MM_validateForm('encargado','','R','telefonos','','R');return document.MM_returnValue">
+              <table width="100%" align="center">
+                  <tr>
+                  <td><table align="center">
                       <tr>
                         <td width="3" class="text1">&nbsp;</td>
                         <td width="184" class="Estilo6">Datos Alumno: </td>
@@ -138,15 +87,16 @@ function MM_validateForm() { //v4.0
                  </form></td>
                 </tr>
                 <tr>
-                  <td bgcolor="#999999"><div align="center" class="Estilo4">Historial de Grados </div></td>
+                  <td><div align="center" class="title">Historial de Grados </div></td>
                 </tr>
                 <tr>
-                  <td bgcolor="#4682B4"><table width="808" border="0">
+                  <td>
+                  	<table class="table" width="100%" border="0">
                       <tr>
-                        <td width="94" class="Estilo6"><div align="center">A&ntilde;o</div></td>
-                        <td width="250"><div align="center" class="Estilo6">Grado</div></td>
-                        <td width="248"><div align="center" class="Estilo6">Encargado</div></td>
-                        <td width="150"><div align="center" class="Estilo6">Informaci&oacute;n</div></td>
+                        <td width="94" class="gris"><div align="center">A&ntilde;o</div></td>
+                        <td width="250" class="gris">Grado</td>
+                        <td width="248" class="gris">Encargado</td>
+                        <td width="150" class="gris">Informaci&oacute;n</td>
                       </tr>
                   </table></td>
                 </tr>
@@ -194,9 +144,7 @@ function MM_validateForm() { //v4.0
                   <td>&nbsp;</td>
                 </tr>
             </table></td>
-        </tr>
-      </table>
-    
+    </div></div>
     
 </body>
 </html>

@@ -1,15 +1,11 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Confirmaci&oacute;n de Alumno');
-
 ?>
 
 <div id="content" class="float-holder">
 	<div id="content2">
 		<?php include('../menu.php'); ?>
-		
+		<?php encabezado('Confirmaci&oacute;n de Alumno'); ?>		
 		<div class="title">Alumno Ingresado con �xito</div>
 		
 		<table width="100%" border="0">
@@ -25,14 +21,14 @@ encabezado('Confirmaci&oacute;n de Alumno');
 		<div class="title">Visualizaci&oacute;n de alumnos nuevos</div>
 		
 		<div class="blue" style="width: 100%; height: 250px; overflow: auto;">
-			<table width="100%" border="0">
+			<table width="100%" border="0" class="table" >
 				<tr>
-					<td class="title" width="10%" align="center">Carn&eacute;</td>
-					<td class="title" width="10%" align="center">Fecha</td>
-					<td class="title" width="40%" align="center">Nombres</td>
-					<td class="title" width="10%" align="center">Compromiso de Estudios</td>
-					<td class="title" width="20%" align="center">Grado</td>
-					<td class="title" width="10%" align="center">Editar</td>
+					<td class="gris" width="10%" align="center">Carn&eacute;</td>
+					<td class="gris" width="10%" align="center">Fecha</td>
+					<td class="gris" width="40%" align="center">Nombres</td>
+					<td class="gris" width="10%" align="center">Compromiso de Estudios</td>
+					<td class="gris" width="20%" align="center">Grado</td>
+					<td class="gris" width="10%" align="center">Editar</td>
 				</tr>
 			<?php
 
