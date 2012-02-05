@@ -1,14 +1,11 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Cursos para Grado');
-
 ?>
 
 <div id="content" class="float-holder">
 	<div id="content2">
 	    <?php include('../menu.php'); ?>
+	    <?php encabezado('Ingreso de Cursos para Grado'); ?>
 		
 		<div class="title">Ingreso de Cursos para Grado</div>
 	</div>

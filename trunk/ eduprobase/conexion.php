@@ -25,6 +25,7 @@ function encabezado($titulo = '', $ruta = '', $full = true)
 <link rel="stylesheet" type="text/css" href="../<?php echo $ruta; ?>style.css" />
 <script src="../<?php echo $ruta; ?>ff.js" type="text/javascript"></script>
 <script src="../<?php echo $ruta; ?>jquery.js" type="text/javascript"></script>
+<script src="../<?php echo $ruta; ?>tmenu.js" type="text/javascript"></script>
 </head>
 
 <body>

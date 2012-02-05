@@ -1,16 +1,12 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Catedr&aacute;ticos');
-
 ?>
 
 <script type="text/JavaScript">
 <!--
 
 function validar(){
-if(!confirm("Seguro que Desea Realizar esta Acci�n...")){
+if(!confirm("Seguro que Desea Realizar esta Accion...")){
 return false;
 }
 MM_validateForm('nombre','','R','apellido','','R','profesion','','R','email','','NisEmail','telefonos','','R','direccion','','R');return document.MM_returnValue;
@@ -21,7 +17,7 @@ MM_validateForm('nombre','','R','apellido','','R','profesion','','R','email','',
 <div id="content" class="float-holder">
 	<div id="content2">
 		<?php include('../menu.php'); ?>
-		
+		<?php encabezado('Ingreso de Catedr&aacute;ticos'); ?>	
 		<div class="title">Ingreso de nuevo catedr&aacute;tico</div>
 	</div>
 	

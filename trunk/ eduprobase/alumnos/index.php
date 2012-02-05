@@ -15,6 +15,11 @@ function validar() {
 </script>
 
 <div id="content" class="float-holder">
+	<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><img src="../images/exit.jpg" /></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 		<?php include('../menu.php'); ?>
 		<?php encabezado('Ingreso de Alumnos'); ?>

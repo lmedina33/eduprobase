@@ -79,6 +79,52 @@ p, div, span, input, textarea, select, a, optgroup {
 		text-align: right;
 }
 
+/* estilo del menu de botones */
+#cuadro{
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+/*	background: #003300;*/
+	float: left;
+	width: 820px;
+	margin-top: 5px;
+	margin-left: 10px;
+	
+}
+
+#j{
+	text-align: center;
+	color: red;
+	font-family: Arial;
+	font-size: 16px;
+}
+
+#ini{
+	width:128px;
+	height: 62px;
+	float: left;
+	margin: 0 auto;
+	/*background: red;*/
+}
+
+#men{
+	width: 139px;
+	height: 62px;
+	float: left;
+	margin: 0 auto;
+	/*background: blue;*/
+	
+}
+
+#exit{
+	width:115px;
+	height: 62px;
+	float: right;
+	margin: 0 auto;
+/*	background: black;*/
+	
+}
+
 
 /* old */
 .table {
@@ -176,6 +222,14 @@ a:active {
 
 #tmenu {
 	padding: 5px;
+	display: none;
+	position: absolute;
+	width: 840px;
+	height: 80px;
+	background: green;
+	margin-top: 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
 }
 #menu {
 	list-style: none;
@@ -187,12 +241,16 @@ a:active {
 	float: left;
 	width: 24.5%;
 	margin: 2px;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
 }
 #menu li a {
 	display: block;
 	padding: 3px;
 	text-align: center;
 	background: #DDD;
+		border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 #menu li a:hover {
 	background: #39D746;

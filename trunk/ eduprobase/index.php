@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (!isset($_SESSION['userlog']))
@@ -15,6 +14,9 @@ if (!isset($_SESSION['userlog']))
 <title>Administraci&oacute;n Escolar</title>
 <link rel="stylesheet" type="text/css" href="./style.css" />
 <script src="./ff.js" type="text/javascript"></script>
+<script src="./jquery.js" type="text/javascript"></script>
+<script src="./tmenu.js" type="text/javascript"></script>
+
 
 </head>
 
@@ -22,7 +24,11 @@ if (!isset($_SESSION['userlog']))
 
 <div id="content">
 <div id="content2">
-		
+		<div id="cuadro">
+			<div id="ini"><img src="images/inicio.jpg" /></div>
+			<div id="men"><img src="images/menu.jpg" /></div>
+			<div id="exit"><a href="exit.php"><img src="images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<?php
 	
 	$toproot = './';
@@ -32,7 +38,7 @@ if (!isset($_SESSION['userlog']))
 	
 	<br />
 	<div align="center">
-	  <p><img src="images/92091501.jpg" width="350" height="278" /></p>
+	 <iframe name="graficas" src="grafica.php" width="650px" height="450px;" frameborder="0" ></iframe>
 	  <p>&nbsp;</p>
 	</div>
 	<br />
