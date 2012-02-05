@@ -3,10 +3,15 @@ require_once('../conexion.php');
 ?>
 
 <div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><img src="../images/exit.jpg" /></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 		<?php include('../menu.php'); ?>
 		<?php encabezado('Confirmaci&oacute;n de Alumno'); ?>		
-		<div class="title">Alumno Ingresado con �xito</div>
+		<div class="title">Alumno Ingresado con &Eacute;xito</div>
 		
 		<table width="100%" border="0">
 			<tr>

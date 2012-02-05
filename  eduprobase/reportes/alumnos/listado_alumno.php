@@ -8,26 +8,32 @@ require_once('../../conexion.php');
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Listado de Alumnos</title>
 <link rel="stylesheet" type="text/css" href="../../style.css"  />
-
+<script src="../../tmenu.js" type="text/javascript"></script>
 <script src="../../jquery.js" type="text/javascript"></script>
 
 </head>
 
 <body>
+	<div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../../index.php"><img src="../../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../../images/menu.jpg" /></div>
+			<div id="exit"><a href="../../exit.php"><img src="../../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
+		     <div id="content2">
+              <?php include('../../menu.php'); ?>
+              <div class="title">Reportes de Alumnos</div>
+            </div>
 <table width="840" border="0" align="center" bgcolor="#000000">
   <tr>
     <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
       <tr>
         <td valign="top">&nbsp;</td>
-        <td><img src="../../images/fond1.jpg" width="830" height="150" /></td>
+        <td></td>
       </tr>
       <tr>
         <td width="8" valign="top">&nbsp;</td>
         <td width="809"><div align="right">
-            <div id="content2">
-              <?php include('../../menu.php'); ?>
-              <div class="title">Reportes de Alumnos</div>
-            </div>
         </div>
             <table width="821" align="center">
               

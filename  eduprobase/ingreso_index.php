@@ -12,14 +12,12 @@ require_once('conexion.php');
 </head>
 
 <body>
-<div id="header">
-	<img src="images/fond1.jpg" width="830" height="150" alt="" />
-</div>
 
 <div id="content" class="float-holder">
 <div id="content2">
     <?php include('menu.php'); ?>
-	
+	<?php encabezado('Ingreso de Datos al Sistema');?>
+	<img src="images/banner.jpg" />
 	<div class="title">Ingreso de Datos del Sistema</div>
 </div>
 	

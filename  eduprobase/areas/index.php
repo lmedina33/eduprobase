@@ -1,9 +1,5 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de &Aacute;reas');
-
 ?>
 
 <script type="text/javascript">
@@ -21,7 +17,7 @@ function validar() {
 <div id="content" class="float-holder">
 	<div id="content2">
 		<?php include('../menu.php'); ?>
-		
+		<?php encabezado('Ingreso de &Aacute;reas'); ?>		
 		<div class="title">Ingreso de &Aacute;reas</div>
 	</div>
 	

@@ -18,6 +18,11 @@ if (!$arreglo1 = mysql_fetch_assoc($ejecutar))
 
 ?>
 			<div id="content" class="float-holder">
+					<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 				<div class="content2">
 					
 				<?php include('../menu.php'); ?>
@@ -192,7 +197,7 @@ document.formulario.encargado.focus();
 
 //<![CDATA[
 function alerta(){
-return window.confirm("�Seguro que desea Realizar la Acci�n...?");}
+return window.confirm("Seguro que desea Realizar la Accion...?");}
 
 $(function() {
 	$('#grado').change(function() {
