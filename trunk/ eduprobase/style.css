@@ -71,6 +71,14 @@ p, div, span, input, textarea, select, a, optgroup {
 		color: #454744;
 }
 
+.rojo{
+	background: #990000;
+	font-family: tahoma;
+	color:white;
+	font-size: 15px;
+	padding: 5px;
+}
+
 .centrar{
 		text-align: center;
 }
@@ -172,6 +180,12 @@ input, select, textarea {
 		padding: 2px;
 		font-family: Tahoma;
 		font-size:13px;
+}
+
+.textblack{
+	color: #000000;
+	font-family: tahoma;
+	font-size: 13px;
 }
 
 .inone {

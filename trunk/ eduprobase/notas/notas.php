@@ -141,7 +141,7 @@ require_once('../conexion.php');
 					
 			<tr>
 				<td width="139"><?php echo $arreglo['carne']; ?></td>
-				<td width="395" class="text2"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
+				<td width="395" class="textblack"><img src="../images/iconos/59.ico" /> <?php echo $arreglo['apellido'] . ', ' . $arreglo['nombre_alumno']; ?></td>
 				<td width="168"><?php
 				
 				$sql = 'SELECT *

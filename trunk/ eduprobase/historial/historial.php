@@ -92,64 +92,64 @@ if (!$arreglo = mysql_fetch_assoc($ejecutar))
                  </form></td>
                 </tr>
                 <tr>
-                  <td><div align="center" class="title">Historial de Grados </div></td>
+                  <td></td>
                 </tr>
                 <tr>
                   <td>
-                  	<table class="table" width="100%" border="0">
-                      <tr>
-                        <td width="94" class="gris"><div align="center">A&ntilde;o</div></td>
-                        <td width="250" class="gris">Grado</td>
-                        <td width="248" class="gris">Encargado</td>
-                        <td width="150" class="gris">Informaci&oacute;n</td>
-                      </tr>
-                  </table></td>
-                </tr>
-                <tr>
-                  <td bgcolor="#F3F3F3"><?php 
-				  $carne = $_GET['carne'];
-				 // $id_alumno = $_GET['id_alumno'];
-				  
-		$seleccionar = "SELECT *
-			FROM reinscripcion r, alumno a, grado g, secciones s
-			WHERE r.id_alumno = a.id_alumno
-				AND r.id_grado = g.id_grado
-				AND s.id_seccion = r.id_seccion
-				AND s.id_grado = r.id_grado
-				AND r.carne = '$carne'";
-		$ejecutar = mysql_query($seleccionar);
-
-		while($arreglo = mysql_fetch_assoc($ejecutar)){
-
-?>
-                      <br />
-                      <table width="808" border="0">
-                        <tr>
-                          <td width="82" class="Estilo6"><div align="center" class="text2"><?php echo $arreglo['anio']; ?></div></td>
-                        <td width="294"><div align="center" class="Estilo6">
-                              <div align="left"><span class="tex2"><?php echo $arreglo['nombre'] . ', secci&oacute;n: ' . $arreglo['nombre_seccion']; ?>
-                              </span></div>
-                          </div></td>
-                          <td width="255" align="left" class="text2"><div align="left"><?php echo $arreglo['encargado_reinscripcion']; ?></div></td>
-                          <td width="50" class="text2"><div align="center"><a href="../reportes/grado.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado']; ?> " target="_blank"><img src="../images/iconos/133.ico" border="0" /></a></div></td>
-                        <td width="100" class="text2">
-	                          <form action="../reportes/certificaciones.php" method="post">
-	                          <input type="hidden" name="alumno" value="<?php echo $arreglo['id_alumno']; ?>" />
-	                          <input type="hidden" name="anio" value="<?php echo $arreglo['anio']; ?>" />
-	                          <input type="hidden" name="seccion" value="<?php echo $arreglo['id_seccion']; ?>" />
-	                          <input type="submit" name="enviar" value="Certificado" />
-	                          </form>
-													</td>
-                        </tr>
-                      </table>
-                    <?php }?>
-                  </td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                </tr>
-            </table></td>
-    </div></div>
+                  	</td>
+                  	</tr>
+                  	</table>
+                  	
+                  	<div class="rojo">Historial de Grados</div>
+	
+	<div class="blue" style="width: 99%; margin: 0 auto;">
+		<table width="100%" border="0">
+			<tr>
+				<td class="textred" width="10%" align="center">A&ntilde;o</td>
+			  <td class="textred" width="22%" align="center">Grado</td>
+			  <td class="textred" width="31%">Encargado</td>
+				<td class="textred" width="11%" align="left">Constancias</td>
+				<td class="textred" width="4%" align="center">Notas</td>
+				<td class="textred" width="22%" align="center">Certificado</td>
+			</tr>
+			
+			<?php
+			
+			$sql = "SELECT *
+				FROM reinscripcion r, alumno a, grado g, secciones s
+				WHERE r.id_alumno = a.id_alumno
+					AND r.id_grado = g.id_grado
+					AND s.id_seccion = r.id_seccion
+					AND s.id_grado = r.id_grado
+					AND r.carne = '$carne'";
+			$ejecutar = mysql_query($sql);
+			
+			while ($arreglo = mysql_fetch_assoc($ejecutar))
+			{
+			?>
+			<tr>
+				<td align="center" class="textblack"><?php echo $arreglo['anio']; ?></td>
+				<td class="textblack"><?php echo $arreglo['nombre'] . ', secci&oacute;n: ' . $arreglo['nombre_seccion']; ?></td>
+				<td class="textblack"><?php echo $arreglo['encargado_reinscripcion']; ?></td>
+				<td align="center">
+                <a href="../reportes/compromiso.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado'];?>" target="_blank"><img src="../images/print.png" width="25" border="0" /></a> 
+                <a href="../reportes/compromiso2.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado']; ?>" target="_blank"><img src="../images/print.png" width="25" border="0" />                </td>
+				<td align="center"><a href="../reportes/grado.php?id_alumno=<?php echo $arreglo['id_alumno']; ?>&amp;id_grado=<?php echo $arreglo['id_grado']; ?> " target="_blank"><img src="../images/nota.png" width="28" border="0" /></a></td>
+				<td align="center">
+					<form action="../reportes/certificaciones2.php" method="post" target="_blank">
+						<input type="hidden" name="alumno" value="<?php echo $arreglo['id_alumno']; ?>" />
+						<input type="hidden" name="anio" value="<?php echo $arreglo['anio']; ?>" />
+						<input type="hidden" name="seccion" value="<?php echo $arreglo['id_seccion']; ?>" />
+					  <input name="submit" type="image" src="../images/certificado.png" title="Buscar por carn&eacute;..."  />
+				  </form>				</td>
+			</tr>
+			<?php
+			}
+			?>
+		</table>
+  </div>
+	
+</div>
     
 </body>
 </html>

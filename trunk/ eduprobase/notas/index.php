@@ -104,7 +104,7 @@ require_once('../conexion.php');
 					<?php
 					
 					$anioa = date('Y');
-					$anio = array(2010, 2011);
+					$anio = array(2010, 2011,2012);
 					
 					echo '<select name="anio">';
 					

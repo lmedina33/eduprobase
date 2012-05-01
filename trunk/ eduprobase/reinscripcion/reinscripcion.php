@@ -58,7 +58,7 @@ if (!$arreglo1 = mysql_fetch_assoc($ejecutar))
 			<td></td>
 			<td  class="derecha"><span class="verde">Grado</span> <span class="titulogris"><select id="grado" name="grado">
 					<?php
-					
+					/*
 					$sql = "SELECT id_grado
 						FROM reinscripcion
 						WHERE carne = '" . $carne . "'
@@ -75,7 +75,12 @@ if (!$arreglo1 = mysql_fetch_assoc($ejecutar))
 					$seleccionar = "SELECT *
 						FROM grado
 						WHERE status = 'Alta' 
-						AND id_grado > " . $last_grade;
+						AND correlativo > " . $last_grade;
+					$ejecutar = mysql_query($seleccionar);*/
+					
+					$seleccionar = "SELECT *
+						FROM grado
+						WHERE status = 'Alta' ORDER BY correlativo ASC";
 					$ejecutar = mysql_query($seleccionar);
 					
 					$primer_seccion = 0;
