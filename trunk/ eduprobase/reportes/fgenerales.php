@@ -1,14 +1,16 @@
 <?php
-
 require_once('../conexion.php');
-
-encabezado('Ingreso de Notas');
-
 ?>
 
 <div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
-	    <?php include('../menu.php'); ?>
+	    <?php include('../menu.php');
+		encabezado('Ingreso de Notas'); ?>
 		
 		<div class="title">Cuadros Generales de Calificaciones</div>
 	</div>

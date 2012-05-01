@@ -2,33 +2,20 @@
 require_once('../conexion.php');
 ?>
 
-
 <div id="content" class="float-holder">
-<div id="content2">
+			<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
+	<div id="content2">
 	<?php include('../menu.php'); ?>
-	<?php encabezado('ingreso de Usuarios');?>
+	<?php encabezado('Ingreso de Usuarios');?>
 	<div class="title">Ingreso de Usuarios</div>
-</div>
-
-<script type="text/JavaScript">
-<!--
-
-function validar(){
-if(!confirm("Seguro que Desea Realizar esta Acci�n...")){
-return false;
-}
-MM_validateForm('nombre','','R','usuario','','R','password','','R');return document.MM_returnValue;
-}
-
-
-//-->
-</script>
-</head>
-
-<body>
+	</div>
 <table border="0" align="center" >
   <tr>
-    <td><form action="cod_usuarios.php" method="post" name="formulario" id="formulario" onsubmit="return validar();">
+    <td><form action="cod_usuarios.php" method="post" name="formulario" id="formulario" onsubmit="return validar_user();">
       <table width="833" border="0" align="center" bgcolor="#FFFFFF">
         <tr>
           <td valign="top">&nbsp;</td>

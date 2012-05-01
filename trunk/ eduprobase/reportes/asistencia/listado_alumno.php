@@ -2,41 +2,38 @@
 $toproot = '../../';
 require_once('../../conexion.php');
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Listado de Alumnos</title>
-<link rel="stylesheet" type="text/css" href="../../style.css"  />
-
-<script src="../../jquery.js" type="text/javascript"></script>
-
-</head>
-
-<body>
-<table width="840" border="0" align="center" bgcolor="#000000">
+?>
+	<div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../../index.php"><img src="../../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../../images/menu.jpg" /></div>
+			<div id="exit"><a href="../../exit.php"><img src="../../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
+		     <div id="content2">
+              <?php include('../../menu.php'); 
+		encabezado('Listados de Alumnos', '../');?>
+              <div class="title">Reportes de Alumnos</div>
+            </div>
+<table width="840" border="0" align="center">
   <tr>
-    <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
+    <td width="830"><table width="800" border="0" align="center">
       <tr>
         <td valign="top">&nbsp;</td>
-        <td><img src="../../images/fond1.jpg" width="830" height="150" /></td>
+        <td></td>
       </tr>
       <tr>
-        <td width="8" valign="top"><label><br />
-              <br />
-              <br />
-              <a href="../../conexion.php"></a><br />
-        </label></td>
-        <td width="809"><div align="right"><div id="content2">
-		<?php include('../../menu.php'); ?>
+        <td width="8" valign="top">
+       </td>
+        <td width="800"><div align="right"><div id="content2">
+	
 		</div>
 		</div>
-            <table width="821" align="center">
+            <table width="800" align="center">
               <tr>
-                <td width="806" bgcolor="#4682B4"><div class="title"> Reportes de Alumnos </div></td>
+                <td width="800" ><div class="title"> Reportes de Alumnos </div></td>
               </tr>
-              <tr bgcolor="#F3F3F3">
-                <td bordercolor="#000000" bgcolor="#F3F3F3"><br />
+              <tr>
+                <td><br />
                   <table width="776" border="0">
                     <tr>
                       <td width="58">&nbsp;</td>

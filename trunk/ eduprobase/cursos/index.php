@@ -3,14 +3,16 @@ require_once('../conexion.php');
 ?>
 
 <div id="content" class="float-holder">
+			<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
-	    <?php include('../menu.php'); ?>
-	    <?php encabezado('Ingreso de Cursos para Grado'); ?>
-		
-		<div class="title">Ingreso de Cursos para Grado</div>
+	<?php include('../menu.php'); ?>
+	<?php encabezado('Ingreso de Tiempo de Examenes');?>
+	<div class="title">Ingreso de Curso por Grado</div>
 	</div>
-	
-	<div class="blue">
 		<form action="cod_cursos.php" method="post" name="formulario" id="formulario" onsubmit="return validar();">
 		
 		<table width="98%" border="0" align="center">
@@ -139,7 +141,11 @@ require_once('../conexion.php');
 //<![CDATA[
 document.formulario.curso.focus();
 
-function alerta(){
-return window.confirm("�Seguro que desea Realizar la Acci�n...?");}
+function validar(){
+if(!confirm("Seguro que Desea Guardar el Grado y mas")){
+return false;
+}
+MM_validateForm('curso','','R','capacidad','','R');return document.MM_returnValue;
+}
 //]]>
 </script>

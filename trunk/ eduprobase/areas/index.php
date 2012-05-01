@@ -2,19 +2,13 @@
 require_once('../conexion.php');
 ?>
 
-<script type="text/javascript">
-//<![CDATA[
-function validar() {
-	if (!confirm("Seguro que desea guardar la nueva area..."))
-	{
-		return false;
-	}
-	MM_validateForm('area','','R','observacion','','R');return document.MM_returnValue;
-}
-//]]>
-</script>
 
 <div id="content" class="float-holder">
+	<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 		<?php include('../menu.php'); ?>
 		<?php encabezado('Ingreso de &Aacute;reas'); ?>		
@@ -23,7 +17,7 @@ function validar() {
 	
 	<div class="blue">
 		
-		<form action="cod_area.php" method="post" onsubmit="return validar();">
+		<form action="cod_area.php" method="post" onsubmit="return validar_area();">
 			<table width="100%" border="0">
 				<tr>
 					<td width="10" class="text1">&nbsp;</td>

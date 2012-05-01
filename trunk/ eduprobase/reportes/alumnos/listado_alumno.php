@@ -2,18 +2,7 @@
 $toproot = '../../';
 require_once('../../conexion.php');
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Listado de Alumnos</title>
-<link rel="stylesheet" type="text/css" href="../../style.css"  />
-<script src="../../tmenu.js" type="text/javascript"></script>
-<script src="../../jquery.js" type="text/javascript"></script>
-
-</head>
-
-<body>
+?>
 	<div id="content" class="float-holder">
 		<div id="cuadro">
 			<div id="ini"><a href="../../index.php"><img src="../../images/inicio.jpg" /></a></div>
@@ -21,12 +10,13 @@ require_once('../../conexion.php');
 			<div id="exit"><a href="../../exit.php"><img src="../../images/exit.jpg" /></a></div>
 		</div><!-- fin del cuadro-->
 		     <div id="content2">
-              <?php include('../../menu.php'); ?>
+              <?php include('../../menu.php'); 
+		encabezado('Listados de Alumnos', '../');?>
               <div class="title">Reportes de Alumnos</div>
             </div>
-<table width="840" border="0" align="center" bgcolor="#000000">
+<table width="840" border="0" align="center">
   <tr>
-    <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
+    <td width="830"><table width="833" border="0" align="center">
       <tr>
         <td valign="top">&nbsp;</td>
         <td></td>
@@ -37,8 +27,8 @@ require_once('../../conexion.php');
         </div>
             <table width="821" align="center">
               
-              <tr bgcolor="#F3F3F3">
-                <td width="806" bordercolor="#000000" bgcolor="#F3F3F3"><br />
+              <tr>
+                <td width="806"><br />
                   <table width="776" border="0">
                     <tr>
                       <td width="58">&nbsp;</td>

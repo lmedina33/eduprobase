@@ -3,6 +3,11 @@ require_once('../conexion.php');
 ?>
 
 <div id="content" class="float-holder">
+			<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 	<?php include('../menu.php'); ?>
 	<?php encabezado('Ingreso de Tiempo de Examenes');?>
@@ -24,7 +29,7 @@ require_once('../conexion.php');
                         <td width="24">&nbsp;</td>
                         <td width="24">&nbsp;</td>
                         <td width="172">&nbsp;</td>
-                        <td width="87"><div align="right"><img src="../images/iconos/chat-home.ico" class="text1" /><span class="text1 Estilo6"><a href="../index.php">Principal</a></span></div></td>
+                        <td width="87"></td>
                       </tr>
                     </table>
                 </div></td>
@@ -86,13 +91,13 @@ require_once('../conexion.php');
               <table >
                
                 <tr>
-                  <td bgcolor="#4682B4">
+                  <td class="title">
                   	<table >
                       <tr width="100%">
                         <td>&nbsp;</td>
-                        <td width="300px"><div align="center" class="Estilo4">Tiempo de Examenes </div></td>
-                        <td width="325px" style="padding-left:65px"><div align="center" class="text1 Estilo4">Fecha Ingreso</div></td>
-                        <td width="100px"><div align="center" class="Estilo5">Status</div></td>
+                        <td width="300px">Tiempo de Examenes</td>
+                        <td width="325px" style="padding-left:65px">Fecha Ingreso</td>
+                        <td width="100px">Status</td>
                       </tr>
                   </table></td>
                 </tr>

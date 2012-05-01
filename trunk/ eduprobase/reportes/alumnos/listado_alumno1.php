@@ -35,7 +35,16 @@ require_once('../../conexion.php');
 				$grado = $_GET['grado'];
 				$seccion = $_GET['seccion'];
 				$anio = $_GET['anio'];
-				
+/*				
+if($_GET['Submit1']){
+	echo "si hay submit1 con los datos";
+	echo $grado;
+	echo $seccion;
+	echo $anio;
+} else {
+	echo "no hay submit";
+}*/
+
 				$seleccionar = "SELECT *
 					FROM grado g, secciones s
 					WHERE g.id_grado ='$grado'
