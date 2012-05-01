@@ -12,7 +12,7 @@ require_once('../../conexion.php');
 </head>
 
 <body>
-<table width="840" border="0" align="center" bgcolor="#000000">
+<table width="840" border="0" align="center">
   <tr>
     <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
       <tr>

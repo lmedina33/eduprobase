@@ -15,7 +15,7 @@ $page_count = 0;
 $coord_sum = 0;
 
 $id_seccion = $_POST['seccion'];
-$alumno = $_POST['alumno'];
+$alumno = (isset($_POST) && isset($_POST['alumno'])) ? $_POST['alumno'] : 0;
 $anio = $_POST['anio'];
 
 $sql = 'SELECT *
@@ -82,9 +82,26 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 		case 9:
 			$grado_sub = ' Perito en Administraci&oacute;n de Empresas con Orientaci&oacute;n en Computaci&oacute;n';
 			break;
+		case 11:
+		case 12:
+		case 13:
+			$grado_sub = ' Magisterio en Educaci&oacute;n Infantil Bilingue Intercultural';
+			break;
 	}
 	
-	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n  No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el (la) alumno (a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . date('Y') . ' curs&oacute; el ' . $grado . ((!empty($grado_sub)) ? '' . $grado_sub . ', ' : '') . 'con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha 29/10/' . date('Y') . ', donde consta que se hizo acreedor(a) a las notas siguientes:';
+	switch($anio)
+	{
+		case 2010:
+			$dia = '29';
+			break;
+		case 2011:
+			$dia = '31';
+			break;
+		case 2012:
+			$dia = '31';
+			break; 
+	}
+	$text_block = 'El infrascrito Secretario del Colegio Mixto de Educaci&oacute;n Media con Orientaci&oacute;n Universitaria, Santa Elena de la Cruz, Flores, Pet&eacute;n, Resoluci&oacute;n  No. 161-2005 de fecha 21/10/2005 CERTIFICA: Que el (la) alumno (a) ' . $arreglo['nombre_alumno'] . ' ' . $arreglo['apellido'] . ' durante el Ciclo Escolar ' . $anio . ' curs&oacute; el ' . $grado . ((!empty($grado_sub)) ? '' . $grado_sub . ', ' : '') . 'con C&oacute;digo Personal No. ' . $arreglo['codigo_alumno'] . ', extendido por el Ministerio de Educaci&oacute;n, y que ha tenido a la vista los Cuadros de Registro de Evaluaci&oacute;n Final de fecha '. $dia .'/10/' . $anio . ', donde consta que se hizo acreedor(a) a las notas siguientes:';
 	
 	/*
 	185 de margen derecho
@@ -207,8 +224,21 @@ while ($arreglo = mysql_fetch_assoc($ejecutar))
 	
 	$pdf->multitable($infot, 65, $pdf->top(180), 5, 9, 1, array('last_height' => $pdf->top()));
 	
+	switch($anio)
+	{
+		case 2010:
+			$day_string = 'veintinueve';
+			break;
+		case 2011:
+			$day_string = 'treinta y un';
+			break;
+		case 2012:
+			$day_string = 'treinta y un';
+			break; 
+	}
+	
 	$text_block = 'En fe de lo anterior se extiende el presente certificado en Santa Elena de la Cruz, Flores, Pet&eacute;n, 
-	a los veintinueve d&iacute;as de octubre de ' . $cv->cv(date('Y')) . '.';
+	a los '. $day_string .' d&iacute;as de octubre de ' . $cv->cv($anio) . '.';
 	
 	$pdf->text_wrap($text_block, 11, $pdf->page_width() - 185, 65, $pdf->top(50), 20);
 	

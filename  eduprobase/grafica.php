@@ -38,7 +38,7 @@ require('conexion.php');
 	
 	$totalc = $total3 - $tot3;
 	
-	$d = 2013;
+	/*$d = 2013;
 	$seleccionar4 = "SELECT * FROM alumno a, reinscripcion r  WHERE r.id_alumno = a.id_alumno AND r.anio = '$c' ";
 	$ejecutar4 = mysql_query($seleccionar4);
 
@@ -61,7 +61,10 @@ require('conexion.php');
 	$tot5 = mysql_num_rows($ejec5);
 	
 	$totale = $total5 - $tot5;
-
+*/
+//son datos provisionales 
+ $d=2013;
+ $e=2014;
 
 $data = array(
   array($a, $total1, $tot1,$totala),
