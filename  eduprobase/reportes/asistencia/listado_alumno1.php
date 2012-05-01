@@ -12,6 +12,7 @@ require_once('../../conexion.php');
 </head>
 
 <body>
+	
 <table width="840" border="0" align="center" bgcolor="#000000">
   <tr>
     <td width="830"><table width="833" border="0" align="center" bgcolor="#FFFFFF">
@@ -31,12 +32,14 @@ require_once('../../conexion.php');
                        
 				$grado = $_GET['grado'];
 				$seccion = $_GET['seccion'];
-				$anio = date("Y");
+				$anio = $_GET['anio'];
+				//var_dump($grado);
+				//var_dump($seccion);
 				
 				$seleccionar = "SELECT *
 					FROM grado g, secciones s
 					WHERE g.id_grado ='$grado'
-						AND s.id_seccion = '$seccion'
+						
 						AND g.id_grado = s.id_grado";
 				$ejecutar = mysql_query($seleccionar);
 				
@@ -59,6 +62,9 @@ require_once('../../conexion.php');
               <tr>
                 <td width="810">
 				<?php 
+				$grado = $_GET['grado'];
+				$seccion = $_GET['seccion'];
+				$anio = $_GET['anio'];
 				
 				$seleccionar = "SELECT *
 					FROM alumno a, grado g, reinscripcion r
@@ -78,7 +84,7 @@ require_once('../../conexion.php');
               <tr>
                 <td><table width="796" border="0">
                   <tr>
-                    <td width="136" class="Estilo11"><?php echo $arreglo['carne']; ?></td>
+                    <td width="136"><?php echo $arreglo['carne']; ?></td>
                     <td width="430"><?php echo $arreglo['apellido'] . " , " . $arreglo['nombre_alumno']; ?></td>
                     <td width="208">
 											_________________________

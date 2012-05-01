@@ -1,5 +1,5 @@
 <?php
-$toproot = './';
+$toproot = '';
 require_once('conexion.php');
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,6 +14,10 @@ require_once('conexion.php');
 <body>
 
 <div id="content" class="float-holder">
+	<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="images/inicio.jpg" /></a></div>
+			<div id="exit"><a href="../exit.php"><img src="images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 <div id="content2">
     <?php include('menu.php'); ?>
 	<?php encabezado('Ingreso de Datos al Sistema');?>

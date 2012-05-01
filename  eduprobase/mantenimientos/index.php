@@ -1,41 +1,38 @@
 <?php
-
 require_once('../conexion.php');
+?>
 
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Modulo de Mantenimiento</title>
-<link rel="stylesheet" type="text/css" href="../style.css"  />
-
-</head>
-
-<body>
-<table width="200" border="0" align="center" bgcolor="#000000">
+<div id="content" class="float-holder">
+			<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
+	<div id="content2">
+	<?php include('../menu.php'); ?>
+	<?php encabezado('Mantenimiento');?>
+	<div class="title">Mantenimiento</div>
+	</div>
+<table width="200" border="0" align="center" >
   <tr>
-    <td><table width="840" border="0" align="center" bgcolor="#FFFFFF">
+    <td><table width="800" border="0" align="center" >
       <tr>
-        <td width="830"><form action="../historial/historial.php" method="get" name="formulario" id="formulario" onsubmit="MM_validateForm('carne','','R');return document.MM_returnValue">
-            <table width="833" border="0" align="center">
+        <td width="800"><form action="../historial/historial.php" method="get" name="formulario" id="formulario" onsubmit="MM_validateForm('carne','','R');return document.MM_returnValue">
+            <table width="800" border="0" align="center">
               <tr>
                 <td valign="top">&nbsp;</td>
-                <td><img src="../images/fond1.jpg" width="830" height="150" /></td>
+                <td></td>
               </tr>
               <tr>
-                <td width="8" valign="top"><label><br />
-                      <br />
-                      <br />
-                      <a href="../conexion.php"></a><br />
-                </label></td>
-                <td width="809"><div align="right">
+                <td width="8" valign="top"></td>
+                <td width="800"><div align="right">
                     <table width="353" border="0">
                       <tr>
                         <td width="24">&nbsp;</td>
                         <td width="10">&nbsp;</td>
                         <td width="153">&nbsp;</td>
                         <td width="57">&nbsp;</td>
-                        <td width="87"><div align="right"><img src="../images/iconos/chat-home.ico" class="text1" /><span class="text1 Estilo6"><a href="../index.php">Principal</a></span></div></td>
+                        <td width="87"></td>
                       </tr>
                     </table>
                 </div>
@@ -43,8 +40,8 @@ require_once('../conexion.php');
                       <tr>
                         <td width="806" bgcolor="#4682B4"><div  class="title">Modulo de Mantenimiento del Sistema </div></td>
                       </tr>
-                      <tr bgcolor="#F3F3F3">
-                        <td bordercolor="#000000" bgcolor="#F3F3F3"><br />
+                      <tr >
+                        <td ><br />
                             <table width="781" border="0" align="center">
                               <tr>
                                 <td width="262"><div align="right"><img src="../images/iconos/59.ico" /></div></td>

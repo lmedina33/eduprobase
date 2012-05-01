@@ -12,7 +12,7 @@ require_once('../conexion.php');
 	<?php encabezado('Reportes Generales'); ?>	
 	<div class="title">Reportes del Sistema</div>
 </div>
-	
+<br />
 	<ul class="options">
 		<li><a href="alumnos/listado_alumno.php"><img src="../images/iconos/59.ico" /> Listado de Alumnos</a></li>
 		<li><a href="asistencia/listado_alumno.php"><img src="../images/iconos/152.ico" /> Control Asistencia de Alumnos</a></li>
@@ -34,6 +34,26 @@ document.formulario.carne.focus();
 function buscar(url) {  
 ventana = open(url,"ventana","scrollbars=yes,status=no,toolbar=no,directories=no,menubar=no,resizable=yes,width=350,height=425")  
 }  
+</script>
+<script language="JavaScript" type="text/javascript">
+
+function buscar(url) {  
+ventana = open(url,"ventana","scrollbars=yes,status=no,toolbar=no,directories=no,menubar=no,resizable=yes,width=350,height=425")  
+}  
+
+$(function() {
+	$('#grado').change(function() {
+		$.ajax({
+			type: "POST",
+			url: "../actseccion.php",
+			data: "grado=" + this.value,
+			success: function(msg) {
+				$('#seccion').html(msg);
+			}
+ });
+	});
+});
+
 </script>
 
 </body>

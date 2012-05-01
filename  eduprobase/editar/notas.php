@@ -3,6 +3,11 @@ require_once('../conexion.php');
 ?>
 
 <div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 	    <?php include('../menu.php'); ?>
 		<?php encabezado('Edicion de Notas');?>	

@@ -1,20 +1,12 @@
 <?php
 require_once('../conexion.php');
 ?>
-
-<script type="text/JavaScript">
-<!--
-
-function validar(){
-if(!confirm("Seguro que Desea Realizar esta Accion...")){
-return false;
-}
-MM_validateForm('nombre','','R','apellido','','R','profesion','','R','email','','NisEmail','telefonos','','R','direccion','','R');return document.MM_returnValue;
-}
-//-->
-</script>
-
 <div id="content" class="float-holder">
+		<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
 	<div id="content2">
 		<?php include('../menu.php'); ?>
 		<?php encabezado('Ingreso de Catedr&aacute;ticos'); ?>	
@@ -22,7 +14,7 @@ MM_validateForm('nombre','','R','apellido','','R','profesion','','R','email','',
 	</div>
 	
 	<div class="blue">
-	<form action="cod_cate.php" method="post" name="formulario" id="formulario" onsubmit="return validar();">
+	<form action="cod_cate.php" method="post" name="formulario" id="formulario" onsubmit="return validar_catedraticos();">
 	
 	<table width="100%" border="0" align="center">
 		<tr>

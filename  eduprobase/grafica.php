@@ -92,43 +92,11 @@ $plot->SetDrawXDataLabelLines(True);
 $plot->SetYTickLabelPos('none');
 $plot->SetYTickPos('none');
 $plot->SetDrawYGrid(False);
-$plot->SetLegend(array('Total Alumnos - '.$total3, 'Alumnas Femeninas - '.$tot3 , 'Alumnos Masculinos - '.$totalc));
+$plot->SetLegend(array('Alumnos - '.$total3, 'Mujeres - '.$tot3 , 'Hombres - '.$totalc));
 # X tick marks are meaningless with this data:
 $plot->SetXTickPos('none');
 $plot->SetXTickLabelPos('none');
 
 $plot->DrawGraph();
-
-
-
-/*
-$data = array(
-  array($a, $total1, 222, 224,300), array($b, $total2, 323, 334,233), array($c, $total3	, 114, 234,350)
-);
-
-$plot = new PHPlot(500, 500);
-$plot->SetImageBorderType('plain');
-$plot->SetDataColors(array('red', 'pink', 'blue', 'black'));
-
-$plot->SetYTickIncrement(50);
-$plot->SetPlotType('bars');
-$plot->SetDataType('text-data');
-$plot->SetDataValues($data);
-$plot->SetYDataLabelPos('plotin');
-# Main plot title:
-$plot->SetTitle('Estadisticas de Alumnos Inscritos');
-
-# No 3-D shading of the bars:
-$plot->SetShading(0);
-
-# Make a legend for the 3 data sets plotted:
-$plot->SetLegend(array('Total Alumnos', 'Alumnos Masculinos' , 'Alumnas Femeninas'));
-
-
-# Turn off X tick labels and ticks because they don't apply here:
-$plot->SetXTickLabelPos('none');
-$plot->SetXTickPos('none');
-
-$plot->DrawGraph();*/
 
 ?>

@@ -3,13 +3,16 @@ require_once('../conexion.php');
 ?>
 
 <div id="content" class="float-holder">
-<div id="content2">
-	<?php include('../menu.php');?>
-	<?php encabezado('Ingreso de Secciones');?>
-	<div class="title">Ingreso de Secci&oacute;nes</div>
-</div>
-
-
+			<div id="cuadro">
+			<div id="ini"><a href="../index.php"><img src="../images/inicio.jpg" /></a></div>
+			<div id="men"><img src="../images/menu.jpg" /></div>
+			<div id="exit"><a href="../exit.php"><img src="../images/exit.jpg" /></a></div>
+		</div><!-- fin del cuadro-->
+	<div id="content2">
+	<?php include('../menu.php'); ?>
+	<?php encabezado('Ingreso de Tiempo de Examenes');?>
+	<div class="title">Ingreso de Secciones</div>
+	</div>
 	<form action="cod_secciones.php" method="post" name="formulario" id="formulario" onsubmit="return validar();">
             <table >
               <tr>

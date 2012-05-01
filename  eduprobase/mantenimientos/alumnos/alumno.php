@@ -32,7 +32,7 @@ $reins = mysql_fetch_array($ejecutar2);
 	<div id="content2">
 		<?php include('../../menu.php'); ?>
 		<? encabezado('Datos: Calificaciones, Datos Alumno', '../'); ?>
-		<div class="title">Historial del alumno</div><? var_dump($arreglo); ?>	
+		<div class="title">Historial del alumno</div>	
 	</div>
 
 	<form action="../cod_mant/cod_man_alumno.php" method="post" name="formulario" id="formulario" onsubmit="return validar()">
@@ -56,7 +56,8 @@ $reins = mysql_fetch_array($ejecutar2);
 											<tr>
 				<td class="text1">&nbsp;</td>
 				<td class="text1 a_right">Grado:</td>
-				<td><select id="grado" name="grado">
+				<td>
+					<select id="grado" name="grado">
 					<?php
 					
 					$seleccionar = "SELECT * FROM grado WHERE status = 'Alta'";
@@ -70,7 +71,8 @@ $reins = mysql_fetch_array($ejecutar2);
 					}
 					
 					?>
-					</select></td>
+					</select>
+					</td>
 				</tr>
 				<tr>
 					<td class="text1">&nbsp;</td>

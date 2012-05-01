@@ -243,3 +243,28 @@ function MM_validateForm() { //v4.0
   } if (errors) alert('Los Siguientes Errores han Ocurrido,\n Complete los Siguientes campos:\n'+errors);
   document.MM_returnValue = (errors == '');
 }
+
+//validar el ingreso de datos de area
+function validar_area() {
+	if (!confirm("Seguro que desea guardar la nueva area..."))
+	{
+		return false;
+	}
+	MM_validateForm('area','','R','observacion','','R');return document.MM_returnValue;
+}
+
+//valida el ingreso de datos en el modulo de catedraticos
+function validar_catedraticos(){
+if(!confirm("Seguro que Desea Realizar esta Accion...")){
+return false;
+}
+MM_validateForm('nombre','','R','apellido','','R','profesion','','R','email','','NisEmail','telefonos','','R','direccion','','R');return document.MM_returnValue;
+}
+
+//valida el ingreso de usuario en el ingreso de datos
+function validar_user(){
+if(!confirm("Seguro que Desea Realizar esta Accion...")){
+return false;
+}
+MM_validateForm('nombre','','R','usuario','','R','password','','R');return document.MM_returnValue;
+}

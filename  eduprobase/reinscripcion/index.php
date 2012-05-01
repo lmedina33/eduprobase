@@ -47,7 +47,7 @@ require_once('../conexion.php');
 				WHERE r.id_alumno = a.id_alumno
 				AND r.id_grado = g.id_grado
 				AND s.id_seccion = r.id_seccion 
-				AND anio = '$anio' ORDER BY r.fecha_reinscripcion DESC ";
+				AND anio = '$anio' ORDER BY r.fecha_reinscripcion ASC ";
 			$ejecutar = mysql_query($seleccionar);
 
 			while ($arreglo = mysql_fetch_assoc($ejecutar))
